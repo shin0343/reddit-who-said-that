@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+/* Design tokens. Components use var(--*) so theming stays in one place. */
+:root {
+  --bg: #fafaf7;
+  --fg: #16161a;
+  --muted: #5f6368;
+  --line: #d9d9d4;
+  --accent: #d93900;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114;
+    --fg: #f2f2ee;
+    --muted: #a3a3a8;
+    --line: #2e2e33;
+    --accent: #ff5a1f;
+  }
+}
+
+body {
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
