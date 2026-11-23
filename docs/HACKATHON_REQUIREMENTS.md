@@ -60,26 +60,37 @@ Four criteria, reportedly **equally weighted** (weights UNVERIFIED). Aggregator 
 | App review / publish | ~1 week; needed for App Directory, not for playtest. Whether the hackathon requires publishing: UNVERIFIED | `devvit_rules.md` |
 | App name | 3–20 chars, `^[a-z][a-z0-9-]*$`; must be globally unique. `who-said-that` availability UNVERIFIED | `devvit_web_configuration.md` |
 
-## 5. Reddit content reuse — rules and our constraints
+## 5. Reddit content reuse: policy check (2026-11-22)
 
-Source: `devvit_rules.md` (Content rules, Privacy and data rules).
+Primary source: Devvit Rules (`devvit-docs/docs/devvit_rules.md`, rev 2026-11-16). Reddit's Developer Terms, Data API Terms and Public Content Policy pages refuse automated fetches; anything from them below came from secondary sources and is **UNVERIFIED**.
 
-- **Allowed:** "your app may copy and display existing Reddit user content and modify it for display", in compliance with the Developer Terms. Content is owned by its authors; "ask redditors for their permission if you want to use existing user content in ways they might not expect".
-- **Forbidden:** re-identifying/de-anonymizing redditors; profiling personal characteristics; surveillance; selling data or using it to train models.
-- **In-app UGC:** prefer limited expression (emoji, predefined dictionaries); avoid free-text input.
-- **Mature content** must be labeled or age-gated → we simply exclude NSFW subs and NSFW comments.
+| Approach | Verdict | Why |
+|---|---|---|
+| External crawler/scraper of reddit.com | **Not allowed** | User Agreement reportedly forbids scraping without Reddit's prior written consent (UNVERIFIED, secondary source) |
+| Third-party dump datasets | **Not allowed** | Can't honor deletions; ownership and licence unclear |
+| In-app reads via the Devvit `reddit` client, shown in the game | **Allowed, with conditions** | "your app may copy and display existing Reddit user content and modify it for display, but only in compliance with Reddit's Developer Terms" |
 
-Our binding rules (enforced in the content provider, Phase 1):
+Conditions (quoted from Devvit Rules):
+- **Deletion:** "you are required to remove any user content that has been deleted from Reddit, including from your Devvit app(s)". "Metadata required for contextualizing related content (for example, post or comment ID, createdAt, etc.) may be retained." "Any retention of content and data that has been deleted, even if disassociated, de-identified or anonymized, is a violation."
+- **Retention:** "we recommend deleting any stored user data within 30 days".
+- **Minimization:** "only use data necessary for your app's stated functionality".
+- **Never:** sell/licence/share data, train ML or LLMs on it, profile, surveil, re-identify redditors.
+- **Mature content** must be labeled or age-gated. We exclude NSFW entirely.
+- **Gray area:** "Ask redditors for their permission if you want to use existing user content in ways they might not expect". The rules don't say whether an anonymous cross-community quiz counts. Mitigations are rules 4–7 below; ask the Devvit team before submitting (§6).
 
-1. Store **comment ID + minimal snapshot**, never author names. Re-validate via `getCommentById` before each day goes live; drop deleted/removed/edited-away comments.
-2. Strip `u/` mentions, links and subreddit self-references from displayed text; no author shown in-game. Link to the original thread only **after** reveal.
-3. Curate only from public, SFW, high-traffic subreddits; small hand-reviewed bank, no bulk scraping.
-4. No "guess the user" feature (out of scope by design and by rule).
-5. Fictional sample comments are allowed for dev/demo and **must be labeled "Sample case"** in the UI.
-6. Moderators of the hosting subreddit can remove a case (menu action, P1).
+Binding rules for the content pipeline:
+1. Read Reddit only through the Devvit `reddit` client, inside the app. No external crawlers, datasets or LLMs.
+2. Harvest small: whitelisted public SFW subreddits, bounded batches. Rejected text is dropped immediately; only the comment ID is kept (to avoid re-harvesting).
+3. A moderator approves every case before it can be served.
+4. Never store or show author names or IDs. Strip `u/`, `r/` and links.
+5. **Deletion sweep.** Delete triggers fire only for the installed subreddit, so a scheduled job re-checks every stored comment and thread text (candidates, bank snapshots) via `getCommentById`/`getPostById`. Deleted or removed → delete the text immediately, keep the ID. Re-check again right before a day goes live.
+6. TTLs: candidates 3 d, snapshots 7 d, daily/progress 30 d. No comment text is stored longer than 30 d.
+7. After reveal, link to the original comment (credit to the author's community).
+8. Fictional samples are labeled "Sample case". No "guess the user" features.
 
 ## 6. Open items (owner: human, before Phase 6)
 
 - [ ] Read official `/rules` page: confirm criteria weights, team rules, whether app must be published or only uploaded, video rules.
+- [ ] Ask the Devvit team (r/Devvit or Discord) whether the anonymous cross-subreddit quiz needs author consent (§5 gray area); record the answer here.
 - [ ] `devvit login` and confirm app name `who-said-that` is available (else rename in `devvit.json` + `package.json`).
 - [x] Confirm cross-subreddit `getCommentById` works in playtest (Phase 1 spike, 2026-11-22: works).

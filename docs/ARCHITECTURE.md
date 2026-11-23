@@ -7,7 +7,7 @@ Stack (confirmed against the official template, Devvit 0.15.4): **Devvit Web · 
 ```mermaid
 flowchart LR
   subgraph Client["Client (iframe on reddit.com)"]
-    Splash["splash.html<br/>inline feed view"] -->|requestExpandedMode| Game["game.html<br/>games/who-said-that/*"]
+    Splash["splash.html<br/>inline feed view"] -->|requestExpandedMode| Game["game.html<br/>games/who-said-that/* · mod review"]
   end
   subgraph Server["Server (serverless Node, Hono)"]
     API["/api/wst/*<br/>routes.ts"] --> Engine["Game engine<br/>(state transitions)"]
@@ -17,12 +17,14 @@ flowchart LR
     Daily --> Provider["Question provider"]
     Engine --> LB["Leaderboard service"]
     Internal["/internal/*<br/>menu · triggers · scheduler"] --> Daily
+    Internal --> Harvest["Harvester · deletion sweep"]
+    Harvest --> Provider
   end
   Game -- "fetch /api (JSON)" --> API
   Room -- "realtime.send" --> RT[("Devvit Realtime")]
   RT -- "connectRealtime" --> Game
   Provider -- "getCommentById" --> Reddit[("Reddit API")]
-  Daily & LB & Room & Provider --> Redis[("Redis<br/>per subreddit")]
+  Daily & LB & Room & Provider & Harvest --> Redis[("Redis<br/>per subreddit")]
   Cron(["Scheduler cron"]) --> Internal
 ```
 
@@ -32,8 +34,9 @@ flowchart LR
 |---|---|---|---|---|
 | 1 | Client UI | `src/client/` (`splash.tsx`, `game.tsx`, `games/who-said-that/`) | Render state from the server, collect choices. Holds no answers. | shared contracts |
 | 2 | Game engine | `src/server/games/who-said-that/engine.ts` (Phase 2) | Validates actions (`guess`, `hint`), advances player/room state, calls scoring | 3–7 |
-| 3 | Question provider | `src/server/providers/questions.ts` (Phase 1) | `QuestionRecord` from curated bank; validates and sanitizes Reddit comments; sample fallback | Reddit API, Redis |
-| 4 | Daily service | `src/server/services/daily.ts` (Phase 2) | Picks today's 5 IDs, idempotent create, per-user progress | provider, Redis, `dateKey.ts` ✅ |
+| 3 | Question provider | `src/server/providers/questions.ts` ✅, `redditText.ts` ✅ | `QuestionRecord` from an approved case; validates and sanitizes Reddit comments; sample fallback | Reddit API, Redis |
+| 3b | Harvester + sweep | `src/server/services/harvest.ts`, `sweep.ts`, `games/who-said-that/subreddits.json` (Phase 1b) | Collect candidates from whitelisted subs; auto-build distractors/explanation; re-check deletions | provider, Scheduler |
+| 4 | Daily service | `src/server/services/daily.ts` ✅ (progress in Phase 2) | Picks today's 5 IDs, idempotent create, per-user progress | provider, Redis, `dateKey.ts` ✅ |
 | 5 | Room service | `src/server/services/rooms.ts` (Phase 3) | Room lifecycle, round timers, realtime broadcasts | engine, Redis, Realtime |
 | 6 | Scoring | `src/server/games/who-said-that/scoring.ts` ✅ | Pure `scoreRound()`; unit-tested | `WST` constants |
 | 7 | Leaderboard | `src/server/services/leaderboard.ts` (Phase 4) | Sorted-set wrapper keyed by `{game}:{period}`; top N + my rank; streaks | Redis |
@@ -59,8 +62,13 @@ Redis is per subreddit, has no key scan, no lists/sets → every key is derivabl
 
 | Key | Type | Contents | TTL |
 |---|---|---|---|
-| `wst:q:{qid}` | string (JSON) | `QuestionRecord` snapshot | 14 d after last use |
-| `wst:bank` | zset | qid → added-at; pool of approved cases | — |
+| `wst:q:{qid}` | string (JSON) | `QuestionRecord` snapshot (comment text) | 7 d |
+| `wst:case:{qid}` | string (JSON) | Approved case **metadata only**: commentId, answer, distractors, explanation | — |
+| `wst:bank` | zset | qid → approved-at; pool of approved cases (seed + harvested) | — |
+| `wst:cand` | zset | candidate id → harvested-at; review queue | — (members trimmed with their text) |
+| `wst:cand:{cid}` | string (JSON) | Candidate text + thread title + sub, pending review | 3 d |
+| `wst:seen` | zset | commentId → seen-at; never re-harvest (ID only) | trim > 60 d |
+| `wst:cursor:{job}` | string | Batch cursor for harvest / sweep jobs | — |
 | `wst:used` | zset | qid → dateKey-as-number used | — |
 | `wst:daily:{date}` | hash | `qids` (JSON array), `postId`, `createdAt` | 30 d |
 | `wst:play:{date}:{uid}` | hash | `round`, `issuedAt`, `results` (JSON), `total`, `doneAt` | 30 d |
@@ -84,13 +92,25 @@ Channel `wst-room-{code}` (no `:` allowed). Events: `lobby` (players/ready), `ro
 
 There is no long-running process, so rounds close by: last player's guess, **or** any client's `POST /party/{code}/tick` after `endsAt` (idempotent, guarded by a transaction), **or** a `scheduler.runJob` at `endsAt` as a backstop (≤ 60/min, fine at hackathon scale).
 
-## 6. Content lifecycle and deletion
+## 6. Content pipeline and deletion
 
-1. **Curate:** a moderator or dev adds a comment ID with answer, distractors and explanation (seed file in Phase 1; mod menu form in P1).
-2. **Validate** (provider): `getCommentById` → reject if deleted/removed, NSFW, < 40 or > 400 chars, or contains the answer sub name. Sanitize `u/…`, links, `r/…`.
-3. **Snapshot** minimal text into `wst:q:{qid}`; never store the author.
-4. **Re-validate** every case when building a day; replace failures from the bank. Expired snapshots drop out via TTL.
-5. **Removal:** mod "Remove case" action deletes `wst:q:{qid}` and its bank entry (P1).
+Policy basis: `HACKATHON_REQUIREMENTS.md` §5. Only the Devvit `reddit` client, inside the app.
+
+```
+harvest (cron, small batches) → candidate queue (3 d TTL) → moderator review → bank → daily pick → serve
+                       ↑                                                         ↑
+                deletion sweep (cron) re-checks every stored text; deleted → drop text, keep ID
+```
+
+1. **Config:** `subreddits.json` lists ~40 public SFW subs, each with a `family` (e.g. cooking: castiron, Cooking, AskCulinary) and a one-line culture `blurb`. Humans write this once.
+2. **Harvest** (`/internal/scheduler/harvest`, every 30 min): a cursor walks the list, ~5 subs per run to stay under the 30 s request limit. Per sub: `getTopPosts(week)` → top comments → skip `wst:seen` → `sanitizeCommentBody` + `checkCaseBody` + thread-title leak check → keep ≤ 3 per sub as candidates. Distractors: 2 from the same family, 1 from another, seeded by id. Explanation defaults to the sub's blurb.
+3. **Review** (moderators only, in the expanded view): one candidate card at a time with Approve / Skip. Approve writes `wst:case:{qid}` + `wst:bank`; Skip deletes the text. Server re-checks mod permission.
+4. **Seed cases** (`seed-cases.json`) enter the bank the same way; they are the fallback if the harvester is down.
+5. **Daily pick** (`getOrCreateDaily`): `loadCase` re-validates live before a day goes live; snapshot `wst:q:{qid}` 7 d.
+6. **Sweep** (`/internal/scheduler/sweep`, every 15 min, ~25 items per run): re-checks candidates and snapshots; deleted/removed/NSFW → delete the text keys and the bank entry, keep the ID in `wst:seen`. Today's daily drops a deleted case on next read and backfills from the bank.
+7. **Removal:** moderator "Remove case" deletes all text for that qid.
+
+Budget: ≤ 3 recurring jobs of the 10 allowed (rollover, harvest, sweep). Reddit API rate limits are UNVERIFIED, so batches stay small and are logged.
 
 ## 7. Adding a new mini-game (e.g. Reddit Courtroom)
 

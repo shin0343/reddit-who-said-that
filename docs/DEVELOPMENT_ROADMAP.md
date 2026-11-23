@@ -4,7 +4,8 @@ Deadline **2026-12-08 18:00 PT**. Target submit **Dec 7** (1-day buffer). Dates 
 
 | Phase | Name | Target |
 |---|---|---|
-| 1 | Extensible game engine + Reddit comment pipeline | Nov 22–24 |
+| 1a | Engine skeleton + comment provider ✅ (PR #10) | Nov 22 |
+| 1b | Harvester, moderator review, deletion sweep | Nov 23–25 (parallel with 2) |
 | 2 | Who Said That? fully playable Daily Case | Nov 25–28 |
 | 3 | Realtime multiplayer Party Room (P1) | Nov 29–Dec 2 |
 | 4 | Daily content, leaderboard, community | Dec 1–3 (overlaps 3) |
@@ -13,12 +14,15 @@ Deadline **2026-12-08 18:00 PT**. Target submit **Dec 7** (1-day buffer). Dates 
 
 ---
 
-### Phase 1: Engine skeleton and comment pipeline
-- **Goal:** the server can produce a validated, sanitized `QuestionRecord[]` for any day.
-- **Build:** spike cross-sub `getCommentById`; `providers/questions.ts` (validate, sanitize, snapshot); `src/server/games/who-said-that/seed-cases.json` (≥ 30 curated cases, schema below); `services/daily.ts` `getOrCreateDaily(dateKey)`; engine state type `PlayerProgress`; unit tests for sanitize + daily pick.
-- **Prereq:** `devvit login`, `devvit upload` (playtest sub exists).
-- **Risks:** cross-sub reads blocked → fallback: curate from the host sub's own threads or labeled fictional bank; comment text leaks the answer.
-- **Done when:** `GET /api/wst/daily` in playtest returns 5 `PublicQuestion`s (no answers) from real comments; deleted comment is skipped; tests green.
+### Phase 1a: Engine skeleton and comment provider ✅
+Done 2026-11-22 (PR #10): cross-sub reads verified, sanitizer, `loadCase`, `getOrCreateDaily`, `GET /api/wst/daily`, 10 seed cases.
+
+### Phase 1b: Harvester, review, sweep
+- **Goal:** enough approved, policy-compliant cases: **≥ 100 by Dec 1, ≥ 150 by Dec 7** (5/day through judging + Party pool).
+- **Build:** `subreddits.json` (~40 SFW subs, families, blurbs); `services/harvest.ts` + cron; review screen + `POST /api/wst/review/{approve,skip}` (mods only); bank in Redis (`wst:case`, `wst:bank`) with seeds imported; `services/sweep.ts` + cron; mod "Remove case". Fix PR #10 review notes: `parseCommentRef` 13+ char IDs, thread-title answer leak, snapshot TTL 14 d → 7 d, re-check stored days on read.
+- **Prereq:** 1a. Files differ from Phase 2, so both can run in parallel.
+- **Risks:** Reddit API rate limits (UNVERIFIED) → small batches; too many low-quality candidates → stricter filters (score floor, length); policy gray area (`HACKATHON_REQUIREMENTS.md` §5).
+- **Done when:** in playtest, a harvest run fills the queue; a mod approves 5 and they appear in a rebuilt day; deleting a test comment removes its text within one sweep; tests green.
 
 ### Phase 2: Daily Case playable
 - **Goal:** a stranger can play 5 cases end-to-end on mobile.

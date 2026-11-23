@@ -5,7 +5,7 @@ Any agent starting work on this repo reads this file first, then only the doc se
 ## 1. Purpose
 Entry for **Reddit's Game of the Day Hackathon 2026** (deadline **2026-12-08 18:00 PT**). *Who Said That?*: read an anonymous Reddit comment, guess which of 4 subreddits wrote it. Daily Case (5 cases/day) is the core; Party Room (2–6 live) is P1; more mini-games (Reddit Courtroom) may follow. Rules: `GAME_DESIGN.md`. Judging mapping: `HACKATHON_REQUIREMENTS.md` §3.
 
-## 2. Status (2026-11-22): Phase 1 core done, bank at 10/30 cases
+## 2. Status (2026-11-22): Phase 1a merged (PR #10); content pipeline redesigned (Phase 1b)
 Verified in Reddit playtest (haein's test app `who-said-that-haein`, r/who_said_that_hae_dev): cross-subreddit `getCommentById` works, and today's daily built 5 real cases. Typecheck, lint, 14 unit tests and build pass. Each dev tests with a personal app name in `devvit.json` (not committed); who owns the official `who-said-that` app is still undecided.
 
 ## 3. Stack (fixed)
@@ -34,7 +34,7 @@ Folders listed in `ARCHITECTURE.md` §2 but absent (`engine.ts`, `rooms.ts`, …
 - **Server-authoritative.** Client gets `PublicQuestion` only; `QuestionRecord` (answer) never leaves the server before reveal.
 - **Redis is per subreddit.** Leaderboards are per community; keys are derivable (no scan). Key map: `ARCHITECTURE.md` §4.
 - **Realtime is server→client only.** Actions go over HTTP; rounds close lazily (`tick`) or via `runJob`. `ARCHITECTURE.md` §5.
-- **Content = curated comment IDs** + sanitized snapshot, re-validated daily, no authors shown. Fictional samples must be labeled. `HACKATHON_REQUIREMENTS.md` §5.
+- **Content = in-app harvest → moderator approval → bank**, only via the Devvit `reddit` client (no external crawling or datasets). Deletion sweep + short TTLs, no authors shown. Policy: `HACKATHON_REQUIREMENTS.md` §5; flow: `ARCHITECTURE.md` §6.
 - **Server code imports with explicit `.ts`** (`allowImportingTsExtensions`) so `node --test` runs files directly.
 - **New game = new folders + one `api.route`.** Extract shared services on the 2nd use, not before.
 - **Design is binding:** `GAME_DESIGN.md` §5 (copy budget, tokens, no dead buttons for judges).
@@ -44,7 +44,7 @@ Scaffold from the official template; demo counter removed; `devvit.json` (redis 
 Phase 1 (2026-11-22): cross-sub comment read verified; `sanitizeCommentBody` / `checkCaseBody` / `parseCommentRef` + tests; `seed-cases.json` (10 cases) + validation test; `loadCase` (live re-validate, NSFW/removed/wrong-sub/length/answer-leak checks, 14 d snapshot); `getOrCreateDaily` (unused first then LRU, `set nx` for idempotency, sample fallback, `wst:used` zset); `GET /api/wst/daily` returns `PublicQuestion[]` only.
 
 ## 7. Not done
-Phase 1 leftovers: grow the bank to ≥ 30 cases (no politics/religion/NSFW); live-test that a deleted comment is skipped. Then Phases 2–6: game screens, leaderboard, streaks, scheduler, Party Room, polish, submission. The "Start case" button is intentionally disabled.
+Phase 1b (harvester, review, sweep, PR #10 review fixes). Then Phases 2–6: game screens, leaderboard, streaks, scheduler rollover, Party Room, polish, submission. The "Start case" button is intentionally disabled.
 
 ## 8. Commands
 ```
@@ -65,6 +65,7 @@ npm run deploy       # types + lint + devvit upload
 - Timeline: 17 days at scaffold time. Party Room is the first cut.
 
 ## 10. Next
-1. Bank: add cases to `seed-cases.json` until ≥ 30 (`npm run test:unit` validates the file).
-2. Phase 2 per `DEVELOPMENT_ROADMAP.md`: `POST /daily/guess`, `POST /daily/hint`, player progress in `GET /daily`, client `CaseScreen` / `RevealCard` / `SummaryScreen`, enable "Start case".
-3. Before submitting: remove any local dev-only menu items and settle the official app name/owner.
+Phase 1b and Phase 2 touch different files and can run in parallel (`DEVELOPMENT_ROADMAP.md`).
+1. **1b:** `subreddits.json` → `services/harvest.ts` + cron → review endpoints + screen (mods only) → bank in Redis → `services/sweep.ts` + cron → PR #10 review fixes. Follow the binding rules in `HACKATHON_REQUIREMENTS.md` §5.
+2. **2:** `POST /daily/guess`, `POST /daily/hint`, player progress in `GET /daily`, client `CaseScreen` / `RevealCard` / `SummaryScreen`, enable "Start case".
+3. Before submitting: ask the Devvit team about the §5 gray area, remove dev-only menu items, settle the official app name/owner.

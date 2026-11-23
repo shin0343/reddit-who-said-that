@@ -58,7 +58,7 @@ Summary card: total, per-case ✓/✗ strip (emoji, spoiler-free, copyable), ran
 
 ## 3. Reddit integration
 
-- **Content:** real comments from public SFW subreddits, curated by ID (policy: `HACKATHON_REQUIREMENTS.md` §5). Fictional labeled samples until Phase 1 lands.
+- **Content:** real comments from whitelisted public SFW subreddits, harvested in-app and **approved by the host subreddit's moderators** (policy: `HACKATHON_REQUIREMENTS.md` §5). Fictional labeled samples are the last fallback.
 - **Community culture:** each case's explanation names the in-joke, slang, or tone that gives it away. This is the learning moment.
 - **Vote distribution:** live % per choice, per case.
 - **Daily challenge:** the scheduler posts a new "Case #N" post each day in the host subreddit, so every day has its own comment thread for discussion.
@@ -69,14 +69,14 @@ Summary card: total, per-case ✓/✗ strip (emoji, spoiler-free, copyable), ran
 
 **P0: must ship before the 2026-12-08 deadline**
 - Daily Case: 5 cases, 4 choices, both hints, server scoring, reveal + explanation, distribution, summary.
-- Content provider with a hand-curated bank (≥ 30 cases) + deletion re-check; fictional fallback labeled.
+- Content pipeline: in-app harvester, moderator review (Approve / Skip / Remove), daily deletion sweep; bank ≥ 100 approved cases by Dec 1; fictional fallback labeled.
 - Scheduler daily rollover + daily post; lazy-create fallback if the job didn't run.
 - Daily leaderboard (top 10 + your rank) and streak.
 - Splash with today's state; mobile + dark mode; loading/error states.
 
 **P1: if time allows**
 - Party Room (Phase 3). This is the first P1 to cut if Daily isn't polished.
-- Moderator tools: add a case from a comment link, remove a case.
+- Moderator tools beyond review: add a case from a comment link, edit an explanation.
 - Share as comment; all-time leaderboard; "hardest case today" stat.
 
 **P2: future**
