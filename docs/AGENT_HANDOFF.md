@@ -5,8 +5,8 @@ Any agent starting work on this repo reads this file first, then only the doc se
 ## 1. Purpose
 Entry for **Reddit's Game of the Day Hackathon 2026** (deadline **2026-12-08 18:00 PT**). *Who Said That?*: read an anonymous Reddit comment, guess which of 4 subreddits wrote it. Daily Case (5 cases/day) is the core; Party Room (2–6 live) is P1; more mini-games (Reddit Courtroom) may follow. Rules: `GAME_DESIGN.md`. Judging mapping: `HACKATHON_REQUIREMENTS.md` §3.
 
-## 2. Status (2026-11-21): scaffold complete, Phase 1 not started
-Typecheck, lint, unit tests and build pass locally. **Never run in Reddit playtest**: the Devvit CLI is not logged in on the dev machine.
+## 2. Status (2026-11-22): Phase 1 core done, bank at 10/30 cases
+Verified in Reddit playtest (haein's test app `who-said-that-haein`, r/who_said_that_hae_dev): cross-subreddit `getCommentById` works, and today's daily built 5 real cases. Typecheck, lint, 14 unit tests and build pass. Each dev tests with a personal app name in `devvit.json` (not committed); who owns the official `who-said-that` app is still undecided.
 
 ## 3. Stack (fixed)
 Devvit Web 0.15.4 (official `devvit-template-react`), React 19, TS 6, Vite 8, Tailwind 4, Hono server, Devvit Redis / Realtime / Scheduler. Node ≥ 24. No tRPC, no external DB, no HTTP Fetch (it would trigger app review + a privacy policy).
@@ -24,8 +24,11 @@ src/server/services/              cross-game services (dateKey.ts)
 src/server/routes/, core/         Reddit menu/trigger handlers, post creation
 src/shared/types/game.ts          platform types (GameId, DateKey)
 src/shared/games/who-said-that/   contracts.ts: WST constants + API types
+src/server/providers/             redditText.ts (parse/sanitize/check, pure), questions.ts (loadCase, snapshots)
+src/server/services/daily.ts      getOrCreateDaily(dateKey), resetDaily
+src/server/games/who-said-that/   cases.ts (pure: seed validation, seeded shuffles, candidate order), seed-cases.json
 ```
-Folders listed in `ARCHITECTURE.md` §2 but absent (`providers/`, `engine.ts`, …) are intentionally not created yet.
+Folders listed in `ARCHITECTURE.md` §2 but absent (`engine.ts`, `rooms.ts`, …) are intentionally not created yet.
 
 ## 5. Key decisions
 - **Server-authoritative.** Client gets `PublicQuestion` only; `QuestionRecord` (answer) never leaves the server before reveal.
@@ -38,9 +41,10 @@ Folders listed in `ARCHITECTURE.md` §2 but absent (`providers/`, `engine.ts`, �
 
 ## 6. Done
 Scaffold from the official template; demo counter removed; `devvit.json` (redis + reddit on, realtime off); start screen + splash; `GET /api/wst/meta`; `scoreRound` + 3 tests; 5 fictional sample cases; mod menu "Create Who Said That? post"; install trigger creates a post.
+Phase 1 (2026-11-22): cross-sub comment read verified; `sanitizeCommentBody` / `checkCaseBody` / `parseCommentRef` + tests; `seed-cases.json` (10 cases) + validation test; `loadCase` (live re-validate, NSFW/removed/wrong-sub/length/answer-leak checks, 14 d snapshot); `getOrCreateDaily` (unused first then LRU, `set nx` for idempotency, sample fallback, `wst:used` zset); `GET /api/wst/daily` returns `PublicQuestion[]` only.
 
 ## 7. Not done
-All of Phases 1–6: content provider, daily service, guess/hint endpoints, game screens, leaderboard, streaks, scheduler, Party Room, polish, submission. The "Start case" button is intentionally disabled.
+Phase 1 leftovers: grow the bank to ≥ 30 cases (no politics/religion/NSFW); live-test that a deleted comment is skipped. Then Phases 2–6: game screens, leaderboard, streaks, scheduler, Party Room, polish, submission. The "Start case" button is intentionally disabled.
 
 ## 8. Commands
 ```
@@ -57,14 +61,10 @@ npm run deploy       # types + lint + devvit upload
 ## 9. Constraints and risks
 - Serverless: 30 s/request, no websockets, no `fs`. Client cannot call external URLs. localStorage is wiped on app update.
 - Redis: no lists/sets/scan/pipelining; 100 MB until published.
-- **UNVERIFIED:** cross-subreddit comment reads; realtime limits; official rule text (Devpost blocked automated fetch); app name `who-said-that` availability.
+- Cross-subreddit comment reads: verified 2026-11-22. **UNVERIFIED:** realtime limits; official rule text (Devpost blocked automated fetch); app name `who-said-that` availability.
 - Timeline: 17 days at scaffold time. Party Room is the first cut.
 
-## 10. Next: Phase 1 exact scope
-1. Human: `npx devvit login` → `npx devvit upload` → `npm run dev`; confirm the start screen renders in the playtest post.
-2. Spike: in a temporary route, `reddit.getCommentById('t1_…')` for a comment in another public sub; record result in `HACKATHON_REQUIREMENTS.md` §4.
-3. `src/server/games/who-said-that/seed-cases.json`: ≥ 30 cases (schema in `DEVELOPMENT_ROADMAP.md`).
-4. `src/server/providers/questions.ts`: `loadCase(seed) → QuestionRecord | null` (validate, sanitize, snapshot to `wst:q:{qid}`), fictional fallback. Pure `sanitizeCommentBody()` with tests.
-5. `src/server/services/daily.ts`: `getOrCreateDaily(dateKey)` idempotent (watch/multi), re-validates cases, avoids `wst:used`.
-6. Route `GET /api/wst/daily` returning `PublicQuestion[]` only. Remove the spike route.
-7. Exit criteria: `DEVELOPMENT_ROADMAP.md` Phase 1 "Done when". Do **not** build UI screens in Phase 1.
+## 10. Next
+1. Bank: add cases to `seed-cases.json` until ≥ 30 (`npm run test:unit` validates the file).
+2. Phase 2 per `DEVELOPMENT_ROADMAP.md`: `POST /daily/guess`, `POST /daily/hint`, player progress in `GET /daily`, client `CaseScreen` / `RevealCard` / `SummaryScreen`, enable "Start case".
+3. Before submitting: remove any local dev-only menu items and settle the official app name/owner.
