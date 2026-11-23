@@ -62,3 +62,11 @@ export type WstMetaResponse = {
   usesSampleContent: boolean;
   username: string | null;
 };
+
+/** GET /api/wst/daily. Player progress is added in Phase 2. */
+export type WstDailyResponse = {
+  type: 'wst-daily';
+  dateKey: DateKey;
+  questions: PublicQuestion[];
+  usesSampleContent: boolean;
+};
