@@ -1,0 +1,110 @@
+[
+  {
+    "id": "c-001",
+    "commentId": "t1_19t166dunqpc1",
+    "answer": "GTA6",
+    "distractors": [
+      "reddeadredemption",
+      "GTA",
+      "PS5"
+    ],
+    "explanation": "Comparing to RDR2 while theorizing about a game that isn't out yet is pure GTA6-sub energy.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-002",
+    "commentId": "t1_19t19bzor9ps4",
+    "answer": "nvidia",
+    "distractors": [
+      "overclocking",
+      "buildapc",
+      "pcmasterrace"
+    ],
+    "explanation": "Trading undervolt curves for a 5090 is everyday talk on the Nvidia sub.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-003",
+    "commentId": "t1_19t19qqsqbbb6",
+    "answer": "nba",
+    "distractors": [
+      "warriors",
+      "basketball",
+      "fantasybball"
+    ],
+    "explanation": "Digging up a player's worst season with exact shooting splits is classic r/nba. Warriors fans would defend him.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-004",
+    "commentId": "t1_19t187l2vx2de",
+    "answer": "cats",
+    "distractors": [
+      "relationship_advice",
+      "Parenting",
+      "dogs"
+    ],
+    "explanation": "Sounds like relationship advice, but the one 'setting boundaries' is a cat.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-005",
+    "commentId": "t1_19t07q5osol5w",
+    "answer": "formula1",
+    "distractors": [
+      "motorsports",
+      "NASCAR",
+      "simracing"
+    ],
+    "explanation": "Only one community needs no last name when it says 'Max'.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-006",
+    "commentId": "t1_19t0xhsenaum9",
+    "answer": "dashcams",
+    "distractors": [
+      "IdiotsInCars",
+      "driving",
+      "AmItheAsshole"
+    ],
+    "explanation": "Dashcam regulars don't just laugh at bad drivers, they lecture about who's in the other car.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-007",
+    "commentId": "t1_19t15h6e0yxgh",
+    "answer": "CleaningTips",
+    "distractors": [
+      "laundry",
+      "HomeImprovement",
+      "LifeProTips"
+    ],
+    "explanation": "Diagnosing the mistake first ('did you, by any chance...') then giving the fix is the cleaning-sub way.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-008",
+    "commentId": "t1_19t1cutjig1us",
+    "answer": "wallstreetbets",
+    "distractors": [
+      "stocks",
+      "investing",
+      "personalfinance"
+    ],
+    "explanation": "Bragging and self-roasting in the same breath is pure WSB.",
+    "addedBy": "haein"
+  },
+  {
+    "id": "c-009",
+    "commentId": "t1_19t1cmgqvdcte",
+    "answer": "marvelstudios",
+    "distractors": [
+      "movies",
+      "boxoffice",
+      "comicbooks"
+    ],
+    "explanation": "Defending a runtime by comparing it to Infinity War: only the MCU faithful do that math.",
+    "addedBy": "haein"
+  }
+]

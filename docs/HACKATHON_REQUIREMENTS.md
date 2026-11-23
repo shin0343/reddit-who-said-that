@@ -53,7 +53,7 @@ Four criteria, reportedly **equally weighted** (weights UNVERIFIED). Aggregator 
 | Realtime | Client `connectRealtime({channel, onMessage})`; server `realtime.send(channel, json)`. **Server → client only**; clients send via HTTP. Channel names cannot contain `:`. Needs `permissions.realtime: true`. Message size / rate limits: UNVERIFIED | `realtime/overview.md` |
 | Scheduler | `devvit.json` `scheduler.tasks` with `cron` (endpoint must be `/internal/...`), or `scheduler.runJob()` one-offs. Max **10 live recurring jobs**, `runJob` ≤ 60 calls/min | `scheduler.mdx` |
 | Reddit API | `reddit` from `@devvit/web/server`; `getCommentById`, `getComments({postId})`, `getTopPosts`, `searchPosts`, `submitCustomPost`, `submitComment`. Enabled via `permissions.reddit` | `reddit-api.mdx` |
-| Reading comments from **other** public subreddits | Not explicitly documented | **UNVERIFIED — Phase 1 spike #1** |
+| Reading comments from **other** public subreddits | **Works.** 2026-11-22 playtest: `reddit.getCommentById('t1_19t18x17gil8l')` from r/castiron returned body, `subredditName`, `removed`, `score`. Comment IDs can be 13+ chars. `/s/` share short-links contain no comment ID | Phase 1 spike ✅ |
 | Triggers | `onCommentDelete` etc. exist, but fire for the installed subreddit only (assumed) | `devvit_web_configuration.md` (scope UNVERIFIED) |
 | HTTP Fetch / LLMs | Premium features: need app review, domain allowlist, own ToS + privacy policy | `devvit_rules.md` |
 | Playtest | `devvit upload` → auto playtest sub; `devvit playtest [sub]` (sub < 200 members); live-reloads on save | `guides/tools/playtest.md` |
@@ -82,4 +82,4 @@ Our binding rules (enforced in the content provider, Phase 1):
 
 - [ ] Read official `/rules` page: confirm criteria weights, team rules, whether app must be published or only uploaded, video rules.
 - [ ] `devvit login` and confirm app name `who-said-that` is available (else rename in `devvit.json` + `package.json`).
-- [ ] Confirm cross-subreddit `getCommentById` works in playtest (Phase 1 spike).
+- [x] Confirm cross-subreddit `getCommentById` works in playtest (Phase 1 spike, 2026-11-22: works).
