@@ -1,4 +1,25 @@
-# Step 6 test report
+# Final live QA report
+
+**Final verification window** November 27, 2026 PST / November 28 UTC. **Deployed candidate** Devvit 0.0.1, gameplay commit `804a1c1`. The earlier Step 6 checks below remain historical evidence.
+
+| Live check | Status | Evidence and provenance |
+| --- | --- | --- |
+| Public subreddit and post | PASS | Direct. Opened the subreddit signed out and saw the demo post. Reloaded the demo permalink signed out and reached the public post. |
+| Signed-out game entry | PASS | Direct. The post preview expanded to the game menu. Starting Daily displayed the Reddit sign-in requirement. The Party menu also displayed its sign-in requirement. |
+| Installed candidate and App Listing | PASS | Direct. Devvit `list installs` returned game 0.0.1 and Admin Helper 0.0.6. `view` showed the app slug and one uploaded version. The listing URL returned HTTP 200 and contained the registered app slug. The saved server bundle SHA-256 matches the release record. |
+| Owner Daily and Fictional inventory | PASS | Owner-reported completion, also recorded during Step 6. Directly reopened the owner’s finished report in Chrome. It showed four cases solved, 510 points and rank 1. The moderator screen showed zero approved Daily or Party comments. |
+| Ordinary account Daily | UNVERIFIED | The owner confirmed that a second account is unavailable. The live board showed a second finisher as “Player” with 205 points. Its account identity and permissions remain unknown. |
+| Two-account Party match | UNVERIFIED | Step 6 reached the hosted host lobby. A hosted five-round completion and matching final standings are pending. The local match used a mock transport. |
+| Native Realtime delivery | UNVERIFIED | The earlier host lobby showed Live. Cross-account receipt of an event before a scheduled poll remains unverified. |
+| Browser refresh recovery | UNVERIFIED | The earlier owner Daily resume passed. Live Party recovery of seat, round and locked answer after a refresh remains unverified. |
+| Polling recovery | UNVERIFIED | The local transport interruption test passed. Live recovery while Realtime was unavailable was unverified. |
+| Native mobile Reddit app | NOT TESTED | The owner reported that the device result was unknown. The earlier WebKit emulation remains local evidence. |
+| Hosted UTC transition | UNVERIFIED | The owner’s live report showed the next Daily countdown targeting 00:00 UTC. The app was uploaded at 00:28 UTC November 28, after the preceding boundary. There is no observed before/after pack pair. |
+| Hosted Scheduler execution | UNVERIFIED | The authenticated Devvit log stream opened with a 12-hour lookback and yielded no execution signal during the check. Configuration registers the jobs and the success handlers have no explicit success log. A pack can also be created by a play request. |
+
+The owner supplied the deployment and public setup details and the earlier host Daily result. This run independently confirmed the installed versions, public URLs and the stored owner result. The owner opened the Chrome demo tab for inspection. No mobile or scheduler result was supplied. This pass produced no game code change or upload.
+
+## Earlier Step 6 evidence
 
 **Test window:** November 27, 2026 PST. **Candidate:** working tree based on `455ca88479a68f3e1694094a7bed23836d8da1d4`. Local QA used Node 24.0.2 and Devvit 0.15.4. The shell initially reported Node 22.15.1. This run used the installed Node 24 binary. The repo pins Node 24.18.0 in `.nvmrc` and CI.
 
@@ -8,7 +29,7 @@
 
 - The inline preview expanded into the game. Fictional Daily completed five rounds. Correct and incorrect reveals appeared. A clue was opened, and reopening the mode restored the revealed round. The leaderboard displayed one finisher, four solved, **510 points**, and rank **1**. The results included the Streak section and UTC countdown.
 - Party creation and the 1/6 lobby passed. The client reported **Live**. Two-account gameplay, Realtime message delivery, polling recovery and final rank agreement remain unverified.
-- The test community is private and signed-out access is denied. Devvit Admin Helper 0.0.6 is installed. Direct judge access and access from an independent Reddit account remain unverified. No public visibility changes were made.
+- At this checkpoint, the test community was private and signed-out access was denied. Devvit Admin Helper 0.0.6 was installed. The next checkpoint made the community public.
 - The Step 6 local results below are historical evidence. This pass used Devvit's upload build and the live installation.
 
 ## Step 6.5 public access and operations
@@ -24,7 +45,7 @@
 
 1. In a browser session signed in as a non-moderator, open the public Demo Post and select **Open today’s case**. Confirm the fictional label and the absence of **Content curation**. Play all five Daily rounds and confirm the report can be reopened.
 2. In the host browser, open **Multiplayer Party** and create a room. In the second browser, enter the host's current code and select **Ready up**. Start on the host. Compare the five comments and timers, deliberately choose different options, and record the reveal, vote distribution, and points after each round.
-3. During a round, refresh one browser and check that it keeps its seat, round and submitted guess. Verify the other account sees changes promptly while Live. Interrupt Realtime for one session, confirm polling updates while it shows Syncing, then restore connectivity. Compare the final rank and score on both screens.
+3. Record a Realtime event on the receiving account and the resulting sync request. Keep the receiving view visible and distinguish the event from a periodic poll or a focus-triggered sync. Refresh one client during the match and verify its seat, round and locked guess. Separately, interrupt only its Realtime transport, keep HTTP reachable, and observe a periodic poll apply a later state while the UI shows Syncing. Restore Realtime and compare final ranks and scores.
 4. On a physical Android or iOS Reddit app, open the same post. Verify inline and expanded views, touch targets and scrolling with a long comment, hints, Lock In and reveal across a five-round Daily, sharing, and the Party lobby or match. Mark the device, app version and each observed outcome. **Physical device status: NOT TESTED.**
 5. At the next UTC midnight, compare the before and after pack and review the hosted Scheduler logs. Record both the date change and any direct evidence of scheduled execution. Game data deletion can be tested with a designated account whose test progress may be erased.
 
@@ -40,7 +61,7 @@
 | Bundle and environment | PASS | 286,252 B raw and 88,270 B gzip for client JS and CSS with default gzip settings, identical to Step 5. Built client and server were scanned for the localhost identity and transport markers |
 | Git hygiene | PASS | `git diff --check`. Pre-existing changes retained. No credential files or recognized key/token signatures found in the worktree and local Git history by a pattern scan |
 
-## Gameplay
+## Historical local gameplay evidence
 
 | Area | Local evidence | Reddit status |
 | --- | --- | --- |
