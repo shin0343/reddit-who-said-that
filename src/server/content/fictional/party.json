@@ -1,0 +1,427 @@
+[
+  {
+    "id": "fictional-party-001",
+    "body": "I gave up naming the machines after what they do. I fed this one a truckload of screws and cashed in the coupons for glass floors. We call it the office.",
+    "choices": [
+      "SatisfactoryGame",
+      "factorio",
+      "OxygenNotIncluded",
+      "RimWorld"
+    ],
+    "answerSubreddit": "SatisfactoryGame",
+    "threadTitle": "The office finally has a roof",
+    "cultureHint": "The machine trades surplus factory parts for vouchers to unlock building pieces.",
+    "explanation": "Factory builders feed items into the AWESOME Sink to earn coupons for building pieces.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-002",
+    "body": "The second cat took seven years to sit on my lap. Unfortunately the first one has filed a competing claim and presents evidence every morning.",
+    "choices": [
+      "legalcatadvice",
+      "cats",
+      "CatAdvice",
+      "aww"
+    ],
+    "answerSubreddit": "legalcatadvice",
+    "threadTitle": "There is only one available lap",
+    "cultureHint": "The cats are being treated as parties to a lawsuit.",
+    "explanation": "Everyday cat disputes are recast as mock legal claims in this community.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-003",
+    "body": "My starter doubled before breakfast, but the dough took until dinner. I went by the jiggle in the tub and ate toast while I waited.",
+    "choices": [
+      "Sourdough",
+      "Baking",
+      "Breadit",
+      "Pizza"
+    ],
+    "answerSubreddit": "Sourdough",
+    "threadTitle": "Can I trust the rise in this cold kitchen?",
+    "cultureHint": "The culture and the dough rise on different schedules.",
+    "explanation": "Naturally leavened bakers can't rely on a fixed clock because the temperature and starter change fermentation.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-004",
+    "body": "Left a blank page between August and September so I could track watering, then forgot to fill it in. That is now the most honest page in the book.",
+    "choices": [
+      "bulletjournal",
+      "Journaling",
+      "houseplants",
+      "Notebooks"
+    ],
+    "answerSubreddit": "bulletjournal",
+    "threadTitle": "The spread that survived summer",
+    "cultureHint": "A blank page is part of a monthly tracking layout.",
+    "explanation": "Custom spreads and habit trackers are signatures of bullet journaling.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-005",
+    "body": "The clamp held for nine months. I finally peeled the label off an old can and made it a little aluminum shoe. It no longer tries to walk off the stand.",
+    "choices": [
+      "redneckengineering",
+      "functionalprint",
+      "fixit",
+      "DIY"
+    ],
+    "answerSubreddit": "redneckengineering",
+    "threadTitle": "Temporary fix number two",
+    "cultureHint": "The charm is the ridiculous but effective substitute material.",
+    "explanation": "A scrap-can shim that outlives a temporary clamp fits improvised engineering.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-006",
+    "body": "I moved the entire orchard so the villagers would have a nice route to the museum. They took turns sitting in the only gap I left for the path.",
+    "choices": [
+      "AnimalCrossing",
+      "StardewValley",
+      "CozyGamers",
+      "Minecraft"
+    ],
+    "answerSubreddit": "AnimalCrossing",
+    "threadTitle": "A town makeover accidentally creates a furniture bottleneck",
+    "cultureHint": "The museum, orchard and paths share one customizable island.",
+    "explanation": "Landscape redesign and villagers blocking construction are typical Animal Crossing island stories.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-007",
+    "body": "I bought a raincoat for the dog. He stepped outside, ate one leaf, and came straight back in. I got wetter putting it on him than the dog got wearing it.",
+    "choices": [
+      "dogs",
+      "dogtraining",
+      "aww",
+      "CatAdvice"
+    ],
+    "answerSubreddit": "dogs",
+    "threadTitle": "Was the new rain gear worth it?",
+    "cultureHint": "There isn't a cue or behavior problem to train; this is a pet-owner story.",
+    "explanation": "The soggy compromise of walking a dog in rain fits general dog-owner conversation.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-008",
+    "body": "The sauce stopped splitting when I stirred in a spoonful of warm water. Can anyone explain why adding water fixed the thing the recipe said water would ruin?",
+    "choices": [
+      "AskCulinary",
+      "Cooking",
+      "Baking",
+      "MealPrepSunday"
+    ],
+    "answerSubreddit": "AskCulinary",
+    "threadTitle": "A pan sauce came back together at the last minute",
+    "cultureHint": "The writer asks for the reason behind a kitchen technique.",
+    "explanation": "Specific questions about the mechanics of an emulsion fit AskCulinary.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-009",
+    "body": "I dropped the roll at the lab with no idea what was on it. The first frame is from my birthday. I'm wearing the coat I bought for my birthday three years ago.",
+    "choices": [
+      "analog",
+      "photography",
+      "Darkroom",
+      "Art"
+    ],
+    "answerSubreddit": "analog",
+    "threadTitle": "Last frame from a forgotten roll",
+    "cultureHint": "The pictures were physically captured and had to be developed.",
+    "explanation": "Film lab drop-off and delayed discovery of old exposures fit analog photography.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-010",
+    "body": "I found a second working drive so I could back up the first one. An hour later the copy utility asked me to swap disks and I understood why everybody used to label things with masking tape.",
+    "choices": [
+      "VintageComputing",
+      "techsupport",
+      "DataHoarder",
+      "pcmasterrace"
+    ],
+    "answerSubreddit": "VintageComputing",
+    "threadTitle": "Saving files from a desktop with one working bay",
+    "cultureHint": "The storage workflow predates removable flash drives.",
+    "explanation": "Manual disk swaps and preservation on obsolete hardware point to vintage computing.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-011",
+    "body": "I planted fifty berries on the last day of spring because they were on sale. The next morning I woke up to the sound of my own financial decisions expiring.",
+    "choices": [
+      "StardewValley",
+      "AnimalCrossing",
+      "Minecraft",
+      "HarvestMoon"
+    ],
+    "answerSubreddit": "StardewValley",
+    "threadTitle": "Why the field looked different after a season change",
+    "cultureHint": "Most crops die on the first day of the next in-game season.",
+    "explanation": "Crops disappearing at season change while farm money matters fits Stardew Valley.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-012",
+    "body": "I wrote a test for our date bug. It only passes in March, so management would like to know if we can ship to a calendar instead of customers.",
+    "choices": [
+      "ProgrammerHumor",
+      "learnprogramming",
+      "webdev",
+      "techsupport"
+    ],
+    "answerSubreddit": "ProgrammerHumor",
+    "threadTitle": "The smallest possible reproduction has a season",
+    "cultureHint": "The technical detail is the absurdity, with no fix requested.",
+    "explanation": "Mocks, date-sensitive tests and a punch line about shipping make this programmer humor.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-013",
+    "body": "I phoned the manufacturer about a cracked wheel on the suitcase. The replacement was still in the catalog, one page over from the diagram printed inside my lid in 1998.",
+    "choices": [
+      "BuyItForLife",
+      "Frugal",
+      "DIY",
+      "homeowners"
+    ],
+    "answerSubreddit": "BuyItForLife",
+    "threadTitle": "A long warranty finally put to the test",
+    "cultureHint": "The subject is whether one durable product remains serviceable decades later.",
+    "explanation": "Decades of available replacement parts are a strong signal in lifetime-purchase discussions.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-014",
+    "body": "My watch said I was ahead of the pace group. I looked down again at the next bend and the group was still ahead of me, so one of us got a much nicer course map.",
+    "choices": [
+      "running",
+      "fitness",
+      "CampingandHiking",
+      "bicycling"
+    ],
+    "answerSubreddit": "running",
+    "threadTitle": "GPS behaves strangely near tall buildings",
+    "cultureHint": "An unreliable distance estimate is throwing off a race pace comparison.",
+    "explanation": "Pace groups and noisy GPS splits through city streets fit running race reports.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-015",
+    "body": "We put the new crossing where drivers have the longest sightline. Then we planted the bus stop on the other side of the block, so every morning the pedestrians vote with their feet.",
+    "choices": [
+      "urbanplanning",
+      "LosAngeles",
+      "walkablecities",
+      "architecture"
+    ],
+    "answerSubreddit": "urbanplanning",
+    "threadTitle": "A newly painted crossing that nobody uses",
+    "cultureHint": "A desire line reveals where people actually want to cross.",
+    "explanation": "The critique links pedestrian behavior to layout decisions, a street planning perspective.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-016",
+    "body": "I pulled the support out of the model and the left arm came with it. The right arm was the part I was worried about, which feels generous of the machine.",
+    "choices": [
+      "3Dprinting",
+      "functionalprint",
+      "DIY",
+      "technology"
+    ],
+    "answerSubreddit": "3Dprinting",
+    "threadTitle": "Removing the scaffolding after a long print",
+    "cultureHint": "A printer uses removable supports under overhangs.",
+    "explanation": "Support removal breaking a printed model is a common fabrication mishap.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-017",
+    "body": "I made two sleeves at once so they'd be the same length. They are, in fact, the same length and both belong to someone with much longer arms.",
+    "choices": [
+      "knitting",
+      "crochet",
+      "Visiblemending",
+      "Sewing"
+    ],
+    "answerSubreddit": "knitting",
+    "threadTitle": "Learning why the gauge swatch matters",
+    "cultureHint": "Two needles and a row count can reproduce the same mistake twice.",
+    "explanation": "Sleeve sizing and a skipped gauge swatch are familiar knitting project problems.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-018",
+    "body": "I made the site load under one second. Then the client added a full-screen video of someone slowly turning a doorknob, for the user experience.",
+    "choices": [
+      "webdev",
+      "techsupport",
+      "learnprogramming",
+      "ProgrammerHumor"
+    ],
+    "answerSubreddit": "webdev",
+    "threadTitle": "Performance budget meets the new home page",
+    "cultureHint": "The video competes with the page's loading budget.",
+    "explanation": "Balancing web performance against requested design assets is a web development issue.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-019",
+    "body": "I only got a two-second look, but the white eyebrow was enough. I spent the next ten minutes trying to describe an eyebrow to my very patient friend.",
+    "choices": [
+      "birding",
+      "birds",
+      "photography",
+      "whatsthisbird"
+    ],
+    "answerSubreddit": "birding",
+    "threadTitle": "A quick identification on a group walk",
+    "cultureHint": "A stripe above the eye is a field mark.",
+    "explanation": "Using field marks to identify birds during an outing fits birding.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-020",
+    "body": "I flattened the board, cut the joinery, then left it overnight. In the morning it had cupped just enough to turn my dry fit into a three-person conversation.",
+    "choices": [
+      "woodworking",
+      "DIY",
+      "BeginnerWoodWorking",
+      "HomeImprovement"
+    ],
+    "answerSubreddit": "woodworking",
+    "threadTitle": "Why a furniture panel moved on the bench",
+    "cultureHint": "Solid stock can change shape when moisture distribution shifts.",
+    "explanation": "Cupping after milling and joinery alignment are workshop problems about wood movement.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-021",
+    "body": "I took his rook with check and had about four seconds to enjoy it before I noticed the pawn he was marching toward the last rank.",
+    "choices": [
+      "chess",
+      "boardgames",
+      "puzzles",
+      "gaming"
+    ],
+    "answerSubreddit": "chess",
+    "threadTitle": "A trapping line looked decisive at first",
+    "cultureHint": "Pawns can become stronger pieces when they reach the far side.",
+    "explanation": "Check and a looming pawn promotion are recognizable chess tactics.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-022",
+    "body": "I finally got the shot to run for thirty seconds. Unfortunately that includes the six seconds I spent looking for a cup while it poured into the drip tray.",
+    "choices": [
+      "espresso",
+      "coffee",
+      "BuyItForLife",
+      "Cooking"
+    ],
+    "answerSubreddit": "espresso",
+    "threadTitle": "Trying to record time and yield on the same pull",
+    "cultureHint": "A pull is usually measured in seconds and by the liquid in the cup.",
+    "explanation": "Shot timing, yield and a drip tray belong to espresso dialing-in.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-023",
+    "body": "I stuck the last hold, looked down, and realized I'd been standing on the green foothold the entire time. The route is yellow. I did a very good warm-up.",
+    "choices": [
+      "bouldering",
+      "climbing",
+      "fitness",
+      "CampingandHiking"
+    ],
+    "answerSubreddit": "bouldering",
+    "threadTitle": "Reading the colors on a busy gym wall",
+    "cultureHint": "Holds assigned to another route don't count.",
+    "explanation": "Color-restricted problems and matching the finish hold are common indoor bouldering concerns.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-024",
+    "body": "My shopping list said yogurt so I took a photo of the price for every size. I did not take a photo of where I parked.",
+    "choices": [
+      "Frugal",
+      "ZeroWaste",
+      "BuyItForLife",
+      "personalfinance"
+    ],
+    "answerSubreddit": "Frugal",
+    "threadTitle": "A stranger watched me compare the price per ounce",
+    "cultureHint": "The cost is compared per unit across different package sizes.",
+    "explanation": "Item-by-item value comparisons for groceries are a recognizable frugal shopping practice.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "party"
+  },
+  {
+    "id": "fictional-party-025",
+    "body": "I threw out eight perfectly focused frames because a satellite crossed each one at a slightly different angle. The sky seems to have subcontracted its photobombs.",
+    "choices": [
+      "astrophotography",
+      "astronomy",
+      "photography",
+      "space"
+    ],
+    "answerSubreddit": "astrophotography",
+    "threadTitle": "Sorting frames before building a long exposure",
+    "cultureHint": "Several aligned sky frames combine into a final image.",
+    "explanation": "Satellite trails and rejecting individual sub-exposures are astrophotography workflow concerns.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "party"
+  }
+]

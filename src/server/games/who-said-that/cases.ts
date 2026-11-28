@@ -1,7 +1,12 @@
+import { createHash } from 'node:crypto';
 // Pure case logic: seed validation, deterministic shuffles, daily candidate order.
 // No Devvit imports, so everything here runs under `node --test`.
 
-import { WST, type PublicQuestion, type QuestionRecord } from '../../../shared/games/who-said-that/contracts.ts';
+import {
+  WST,
+  type PublicQuestion,
+  type QuestionRecord,
+} from '../../../shared/games/who-said-that/contracts.ts';
 
 /** One entry of seed-cases.json. See docs/DEVELOPMENT_ROADMAP.md for the schema. */
 export type SeedCase = {
@@ -23,16 +28,22 @@ export const validateSeedCases = (cases: readonly SeedCase[]): string[] => {
     if (!/^c-\d{3,}$/.test(c.id)) errors.push(`${at}: id must look like c-001`);
     if (ids.has(c.id)) errors.push(`${at}: duplicate id`);
     ids.add(c.id);
-    if (!/^t1_[a-z0-9]+$/.test(c.commentId)) errors.push(`${at}: commentId must look like t1_abc123`);
+    if (!/^t1_[a-z0-9]+$/.test(c.commentId))
+      errors.push(`${at}: commentId must look like t1_abc123`);
     if (commentIds.has(c.commentId)) errors.push(`${at}: duplicate commentId`);
     commentIds.add(c.commentId);
     const names = [c.answer, ...c.distractors].map((n) => n.toLowerCase());
     if (c.distractors.length !== WST.choicesPerRound - 1) {
-      errors.push(`${at}: needs exactly ${WST.choicesPerRound - 1} distractors`);
+      errors.push(
+        `${at}: needs exactly ${WST.choicesPerRound - 1} distractors`
+      );
     }
-    if (new Set(names).size !== names.length) errors.push(`${at}: answer and distractors must all differ`);
-    if (names.some((n) => !/^[a-z0-9_]{2,21}$/.test(n))) errors.push(`${at}: subreddit names have no "r/" and no spaces`);
-    if (c.explanation.trim().length < 10) errors.push(`${at}: explanation is missing`);
+    if (new Set(names).size !== names.length)
+      errors.push(`${at}: answer and distractors must all differ`);
+    if (names.some((n) => !/^[a-z0-9_]{2,21}$/.test(n)))
+      errors.push(`${at}: subreddit names have no "r/" and no spaces`);
+    if (c.explanation.trim().length < 10)
+      errors.push(`${at}: explanation is missing`);
   }
   return errors;
 };
@@ -65,8 +76,11 @@ export const seededShuffle = <T>(items: readonly T[], seed: string): T[] => {
 };
 
 /** The 4 choices in a stable, answer-independent order. */
-export const buildChoices = (answer: string, distractors: readonly string[], seed: string): string[] =>
-  seededShuffle([answer, ...distractors], `choices:${seed}`);
+export const buildChoices = (
+  answer: string,
+  distractors: readonly string[],
+  seed: string
+): string[] => seededShuffle([answer, ...distractors], `choices:${seed}`);
 
 /**
  * Order in which to try cases for a day: never-used cases first (shuffled by date),
@@ -80,16 +94,25 @@ export const orderCandidates = (
 ): string[] => {
   const shuffled = seededShuffle(caseIds, `daily:${dateKey}`);
   const fresh = shuffled.filter((id) => !usedOn.has(id));
-  const used = shuffled.filter((id) => usedOn.has(id)).sort((a, b) => usedOn.get(a)! - usedOn.get(b)!);
+  const used = shuffled
+    .filter((id) => usedOn.has(id))
+    .sort((a, b) => usedOn.get(a)! - usedOn.get(b)!);
   return [...fresh, ...used];
 };
 
 /** "2026-11-22" -> 20261122, used as a sortable Redis score. */
-export const dayNumber = (dateKey: string): number => Number(dateKey.replaceAll('-', ''));
+export const dayNumber = (dateKey: string): number =>
+  Number(dateKey.replaceAll('-', ''));
+
+// Published IDs must not contain a Reddit comment ID, including legacy approved cases.
+export const publicQuestionId = (q: QuestionRecord) =>
+  q.source === 'reddit'
+    ? `verified-${createHash('sha256').update(q.id).digest('hex').slice(0, 32)}`
+    : q.id;
 
 /** Strip everything the client must not see before guessing. */
 export const toPublic = (q: QuestionRecord): PublicQuestion => ({
-  id: q.id,
+  id: publicQuestionId(q),
   body: q.body,
   choices: q.choices,
   source: q.source,

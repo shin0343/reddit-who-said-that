@@ -1,7 +1,13 @@
 // Who Said That? client <-> server contract. Rules live in docs/GAME_DESIGN.md.
-// The client NEVER receives `answerSubreddit` before it has submitted a guess for that round.
+// Answers are serialized only during the reveal phase.
 
 import type { DateKey, GameMode } from '../../types/game';
+import type {
+  CommunityResults,
+  DailyPackInfo,
+  Difficulty,
+  FictionalPool,
+} from './community';
 
 export const WST = {
   roundsPerDaily: 5,
@@ -15,9 +21,9 @@ export const WST = {
   partyMaxPlayers: 6,
 } as const;
 
-export type HintKind = 'thread-title' | 'eliminate-one';
+export type HintKind = 'thread-title' | 'eliminate-one' | 'culture';
 
-/** Where a comment came from. `fictional` samples are allowed only for dev/demo and must be labeled in UI. */
+/** Where a comment came from. `fictional` cases are original fiction and must be labeled in UI. */
 export type ContentSource =
   | { kind: 'fictional' }
   | { kind: 'reddit'; commentId: `t1_${string}`; permalink: string };
@@ -34,6 +40,9 @@ export type PublicQuestion = {
 export type QuestionRecord = PublicQuestion & {
   answerSubreddit: string;
   threadTitle: string; // used by the 'thread-title' hint
+  cultureHint?: string;
+  difficulty?: Difficulty;
+  pool?: FictionalPool;
   explanation: string; // shown on reveal: why this community says it this way
   sourceRef: ContentSource;
 };
@@ -50,7 +59,7 @@ export type RoundResult = {
   answerSubreddit: string;
   points: number;
   explanation: string;
-  /** Share of players per choice, 0..1. Filled from Redis in Phase 2. */
+  /** Share of submitted guesses per choice, 0..1. */
   distribution: Record<string, number>;
 };
 
@@ -61,12 +70,42 @@ export type WstMetaResponse = {
   rounds: number;
   usesSampleContent: boolean;
   username: string | null;
+  canCurate: boolean;
 };
 
-/** GET /api/wst/daily. Player progress is added in Phase 2. */
+/** Public catalog response for GET /api/wst/daily. */
 export type WstDailyResponse = {
   type: 'wst-daily';
   dateKey: DateKey;
   questions: PublicQuestion[];
+  pack: DailyPackInfo;
   usesSampleContent: boolean;
+};
+
+export type DailyAction =
+  | { type: 'open' }
+  | { type: 'next'; dateKey: DateKey; questionId: string }
+  | { type: 'guess'; dateKey: DateKey; questionId: string; choice: string }
+  | { type: 'hint'; dateKey: DateKey; questionId: string; kind: HintKind };
+
+export type DailyResult = Omit<RoundResult, 'distribution'> & {
+  pick: string;
+  hintsUsed?: HintKind[];
+  permalink?: string;
+};
+
+export type DailyProgress = {
+  dateKey: DateKey;
+  round: number;
+  question: PublicQuestion | null;
+  hints: Partial<Record<HintKind, string>>;
+  availableHints: HintKind[];
+  reveal: DailyResult | null;
+  total: number;
+  outcomes: (boolean | null)[];
+  pack: DailyPackInfo;
+  serverNow: number;
+  nextDailyAt: number;
+  finished: boolean;
+  community: CommunityResults | null;
 };

@@ -1,6 +1,6 @@
 # Hackathon Requirements — Reddit's Game of the Day Hackathon 2026
 
-Checked 2026-11-21. Devpost pages (`redditgameofday2026.devpost.com`, `/rules`) **refused automated fetches (HTTP 403)**. Event facts below come from search-result summaries and aggregator pages that quote the rules (tierones.io, internshala.com). Anything not confirmed by two sources or by official Reddit docs is marked **UNVERIFIED**. A human must read `/rules` once before submitting (Phase 6 gate).
+Checked November 27, 2026 against the [official rules](https://redditgameofday2026.devpost.com/rules) and [overview](https://redditgameofday2026.devpost.com/). See the [release checklist](RELEASE_CHECKLIST.md) for required links, access, exact cutoff times, and the candidate status.
 
 Devvit facts come from the official docs source repo `github.com/reddit/devvit-docs` (`docs/`, pulled 2026-11-21) and the official template `reddit/devvit-template-react` (Devvit 0.15.4).
 
@@ -8,13 +8,12 @@ Devvit facts come from the official docs source repo `github.com/reddit/devvit-d
 
 | Item | Value | Status |
 |---|---|---|
-| Submission window | 2026-11-11 12:00 PT → **2026-12-08 18:00 PT** | 2 sources agree |
-| Judging / winners | Dec 9–16 / ~Dec 17 2026 | 2 sources agree |
-| Eligibility | Age of majority; individuals or teams; excluded countries per rules | UNVERIFIED detail |
-| Prior winners | Projects that won an earlier Reddit hackathon are ineligible | 1 source |
-| One prize per project | Yes | 1 source |
-| Prizes | Best Daily Game $15k · Best Ported Daily Game $6k · 10× Honorable Mention $1k · 6× Devvit Helpers $500 · 5× Feedback $200 | 2 sources agree |
-| Team size / entries per team | Not stated | UNVERIFIED |
+| Submission window | 2026-11-11 12:00 PT → **2026-12-08 18:00 PT** | Official rules |
+| Judging / winners | Dec 9–16 / ~Dec 17 2026 | Official rules |
+| Eligibility | Age of majority; individuals or teams; excluded countries per rules | Official rules, section 3 |
+| Prior winners | Projects that won an earlier Reddit hackathon are ineligible | Official rules |
+| Prizes | Best Daily Game $15k · Best Ported Daily Game $6k · 10× Honorable Mention $1k · 6× Devvit Helpers $500 · 5× Feedback $200 | Official rules |
+| Team size / multiple entries | No numeric team size stated. Each entry must be materially distinct | Official rules, sections 3 and 4 |
 
 ## 2. Required submission
 
@@ -22,22 +21,22 @@ Devvit facts come from the official docs source repo `github.com/reddit/devvit-d
 |---|---|---|
 | App link on developers.reddit.com | Yes | `devvit upload` creates it (Phase 6) |
 | README in the app root describing the game | Yes | `README.md` (rewrite for judges in Phase 6) |
-| Link to a post running the game in a **public test subreddit with < 200 members** | Yes | Playtest sub created by `devvit upload`, or `devvit playtest <sub>` |
-| Text description | Yes | Devpost form |
+| Test subreddit and live interactive post links | Yes | Prefer a public subreddit with fewer than 200 members. The official rules also allow admin access via `devvit-dev-bot`. |
+| English text description and testing materials | Yes | Devpost description, README and live links |
 | Demo video **< 1 minute** | Optional | Record it anyway (Phase 6) |
 | Public code repo | Optional | This repo |
 | Must be a *new* daily game built on Devvit Web in a Reddit post | Yes | Built from scratch, Devvit Web 0.15 |
 
 ## 3. Judging criteria → what we must deliver
 
-Four criteria, reportedly **equally weighted** (weights UNVERIFIED). Aggregator note: judges "reward a polished small game over a big build".
+Four criteria carry equal weight after an initial pass/fail viability screening.
 
 | Criterion | What judges look for | Who Said That? must have (P0) |
 |---|---|---|
 | **Delightful UX** | Instantly understandable, fun on mobile, fast | 1-tap start from feed splash; one comment + 4 big choices; reveal moment with explanation; < 3 min session |
 | **Polish** | Launch quality, no bugs, Devvit Rules compliant | No dead buttons, loading/error states, dark mode, mobile layout, content labels, no policy risk |
 | **Reddit-y / community-minded** | Uses Reddit culture, brings community together | The *content is* Reddit culture; "how others voted" distribution; daily leaderboard per subreddit; daily post where people argue in comments |
-| **Fresh recurring content** | A reason to come back every day | New 5-case set every UTC day via scheduler; streaks; new daily post |
+| **Fresh recurring content** | A reason to come back every day | Five cases rotate each UTC day in the same interactive post. Players earn a streak. |
 
 ## 4. Devvit Web platform facts (verified in official docs)
 
@@ -57,7 +56,7 @@ Four criteria, reportedly **equally weighted** (weights UNVERIFIED). Aggregator 
 | Triggers | `onCommentDelete` etc. exist, but fire for the installed subreddit only (assumed) | `devvit_web_configuration.md` (scope UNVERIFIED) |
 | HTTP Fetch / LLMs | Premium features: need app review, domain allowlist, own ToS + privacy policy | `devvit_rules.md` |
 | Playtest | `devvit upload` → auto playtest sub; `devvit playtest [sub]` (sub < 200 members); live-reloads on save | `guides/tools/playtest.md` |
-| App review / publish | ~1 week; needed for App Directory, not for playtest. Whether the hackathon requires publishing: UNVERIFIED | `devvit_rules.md` |
+| App review / publish | ~1 week; needed for App Directory, not for playtest. The hackathon uses upload and playtest | `devvit_rules.md` |
 | App name | 3–20 chars, `^[a-z][a-z0-9-]*$`; must be globally unique. `who-said-that` availability UNVERIFIED | `devvit_web_configuration.md` |
 
 ## 5. Reddit content reuse: policy check (2026-11-22)
@@ -90,7 +89,7 @@ Binding rules for the content pipeline:
 
 ## 6. Open items (owner: human, before Phase 6)
 
-- [ ] Read official `/rules` page: confirm criteria weights, team rules, whether app must be published or only uploaded, video rules.
+- [x] Reviewed the official criteria, eligibility, upload, video, and access rules.
 - [ ] Ask the Devvit team (r/Devvit or Discord) whether the anonymous cross-subreddit quiz needs author consent (§5 gray area); record the answer here.
 - [ ] `devvit login` and confirm app name `who-said-that` is available (else rename in `devvit.json` + `package.json`).
 - [x] Confirm cross-subreddit `getCommentById` works in playtest (Phase 1 spike, 2026-11-22: works).

@@ -1,0 +1,1192 @@
+[
+  {
+    "id": "fictional-daily-001",
+    "body": "I replaced the spring under the space bar. The sentence is still unfinished, but the space between the words has never sounded better.",
+    "choices": [
+      "MechanicalKeyboards",
+      "pcmasterrace",
+      "techsupport",
+      "BuyItForLife"
+    ],
+    "answerSubreddit": "MechanicalKeyboards",
+    "threadTitle": "The one key that sounded hollow",
+    "cultureHint": "A long key can rattle at its edges even when its switch is fine.",
+    "explanation": "Long-key sound and stabilizer tuning are classic mechanical keyboard rabbit holes.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-002",
+    "body": "She stands on her back feet to watch the toaster. Has anyone else’s cat picked a household appliance to supervise?",
+    "choices": [
+      "WhatsWrongWithYourCat",
+      "cats",
+      "aww",
+      "CatAdvice"
+    ],
+    "answerSubreddit": "WhatsWrongWithYourCat",
+    "threadTitle": "Breakfast was served a minute late",
+    "cultureHint": "The toaster is working fine. The joke is the cat treating breakfast as a shift at work.",
+    "explanation": "The oddly specific habit is the joke. This community shares cats doing things their people can’t quite explain.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-003",
+    "body": "The store wanted eight dollars for a matching lid. I took the jar to the thrift shop and auditioned lids until one clicked.",
+    "choices": [
+      "Frugal",
+      "BuyItForLife",
+      "DIY",
+      "ZeroWaste"
+    ],
+    "answerSubreddit": "Frugal",
+    "threadTitle": "A kitchen problem with an eight-dollar ceiling",
+    "cultureHint": "The win is getting the same use out of a purchase for less money.",
+    "explanation": "The improvised secondhand fix makes the price the punch line, a classic frugal win.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-004",
+    "body": "We scheduled a rematch because the winner only scored twelve and half of us still thought grain was a decorative component.",
+    "choices": [
+      "boardgames",
+      "gaming",
+      "chess",
+      "puzzles"
+    ],
+    "answerSubreddit": "boardgames",
+    "threadTitle": "First play of a game with too many wooden pieces",
+    "cultureHint": "Physical resources and an endgame point count help identify the hobby.",
+    "explanation": "Wooden grain tokens, shared rules confusion and a low winning score fit a tabletop game night.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-005",
+    "body": "The hallway light only comes on when the washing machine finishes. I've either wired it wrong or achieved the world's least accessible laundry notification.",
+    "choices": [
+      "homeautomation",
+      "DIY",
+      "techsupport",
+      "HomeNetworking"
+    ],
+    "answerSubreddit": "homeautomation",
+    "threadTitle": "A midnight lighting rule needs a second look",
+    "cultureHint": "The link between the two devices could be software.",
+    "explanation": "Triggering a light from an unrelated appliance event points to an automation routine.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-006",
+    "body": "I took a gentle loop to clear my head and spent the whole time negotiating whether the last hill counted as part of my easy pace.",
+    "choices": [
+      "running",
+      "fitness",
+      "CampingandHiking",
+      "AdvancedRunning"
+    ],
+    "answerSubreddit": "running",
+    "threadTitle": "An easy outing with one regrettable elevation change",
+    "cultureHint": "Effort and pace matter more here than the view.",
+    "explanation": "Easy-day pacing on hills is a staple of regular runners comparing their outings.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-007",
+    "body": "My first batch fused into one enormous cookie. I put it on a cutting board and told everyone it was a sheet cookie on purpose.",
+    "choices": [
+      "Baking",
+      "Cooking",
+      "Sourdough",
+      "AskCulinary"
+    ],
+    "answerSubreddit": "Baking",
+    "threadTitle": "What to do when the dough spreads",
+    "cultureHint": "Oven spacing turned individual portions into one piece.",
+    "explanation": "Dough spread and the cookie salvage are about baking technique.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-008",
+    "body": "The menu works on every device except the actual phone. My emulator has apparently been nodding politely this whole time.",
+    "choices": [
+      "webdev",
+      "learnprogramming",
+      "ProgrammerHumor",
+      "techsupport"
+    ],
+    "answerSubreddit": "webdev",
+    "threadTitle": "It looked fine in the responsive preview",
+    "cultureHint": "The tricky part is a website behaving differently on a physical device.",
+    "explanation": "Responsive navigation and real-device testing are everyday web development concerns.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-009",
+    "body": "My aunt's kettle has outlasted two marriages and a kitchen remodel. The handle went wobbly today and she asked if we could find the original service manual.",
+    "choices": [
+      "BuyItForLife",
+      "Frugal",
+      "ZeroWaste",
+      "DIY"
+    ],
+    "answerSubreddit": "BuyItForLife",
+    "threadTitle": "A forty-year appliance finally needs a part",
+    "cultureHint": "The question is whether an old purchase can remain in service.",
+    "explanation": "Longevity, repair documentation and replaceable parts are central to lifetime-product discussions.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-010",
+    "body": "I went out for the gold light and came back with four photos of a bus shelter. Turns out the wet roof was the only thing in town holding a highlight.",
+    "choices": [
+      "photography",
+      "analog",
+      "travel",
+      "Art"
+    ],
+    "answerSubreddit": "photography",
+    "threadTitle": "What stayed bright just before sunset",
+    "cultureHint": "Pay attention to which surface caught and reflected the available light.",
+    "explanation": "Golden-hour timing and preserving highlight detail point to the photographer's eye.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-011",
+    "body": "I fenced in one sheep and left for dinner. The sheep is gone, but there is now a very well-lit square of grass and a skeleton in my boat.",
+    "choices": [
+      "Minecraft",
+      "Terraria",
+      "gaming",
+      "StardewValley"
+    ],
+    "answerSubreddit": "Minecraft",
+    "threadTitle": "A tiny animal pen beside the starter base",
+    "cultureHint": "An enemy can be contained in an ordinary crafted vehicle.",
+    "explanation": "Boats can trap hostile mobs and lighting is part of keeping a block-built base safe.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-012",
+    "body": "I bought a clear drawer cabinet to stop losing the tiny hinges. Now the hinges have a drawer and the cabinet is the most expensive part of the build.",
+    "choices": [
+      "lego",
+      "modelmakers",
+      "DIY",
+      "BuyItForLife"
+    ],
+    "answerSubreddit": "lego",
+    "threadTitle": "Workbench storage after a missing hinge",
+    "cultureHint": "Tiny interchangeable parts get sorted individually before assembly.",
+    "explanation": "Sorting specialized plastic elements can become its own project for brick builders.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-013",
+    "body": "The loaf won't go in until this jar moves a little farther past the rubber band. Dinner will be ready when my countertop organism feels respected.",
+    "choices": [
+      "Sourdough",
+      "Baking",
+      "Cooking",
+      "AskCulinary"
+    ],
+    "answerSubreddit": "Sourdough",
+    "threadTitle": "A cold kitchen is stretching the schedule",
+    "cultureHint": "The rubber band marks the culture's starting volume.",
+    "explanation": "Tracking starter rise with a band is a practical sourdough fermentation check.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-014",
+    "body": "The company called it a single source of truth. We now have three sources, and each one claims the others are cached.",
+    "choices": [
+      "ProgrammerHumor",
+      "webdev",
+      "learnprogramming",
+      "ADHDmemes"
+    ],
+    "answerSubreddit": "ProgrammerHumor",
+    "threadTitle": "Notes after the architecture meeting",
+    "cultureHint": "The systems vocabulary is part of the joke.",
+    "explanation": "Conflicting caches and architectural buzzwords make this a joke aimed at programmers.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-015",
+    "body": "I spent two weeks staring at a glass box with no fish in it and got genuinely excited when the purple vial turned blue.",
+    "choices": [
+      "Aquariums",
+      "PlantedTank",
+      "pets",
+      "houseplants"
+    ],
+    "answerSubreddit": "Aquariums",
+    "threadTitle": "Getting a tank ready for its first residents",
+    "cultureHint": "The color is a water chemistry reading, and setup precedes adding livestock.",
+    "explanation": "Cycling a new tank and testing its nitrogen chemistry are foundational aquarium tasks.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-016",
+    "body": "I spent eleven minutes protecting my queen and then moved her onto the exact square the knight had been staring at the whole time.",
+    "choices": [
+      "chess",
+      "boardgames",
+      "puzzles",
+      "gaming"
+    ],
+    "answerSubreddit": "chess",
+    "threadTitle": "My first slow game after a month of quick ones",
+    "cultureHint": "One piece threatens squares that are easy to overlook.",
+    "explanation": "Queen safety and missed knight attacks are recognizable chess errors.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-017",
+    "body": "My pothos reached the bookshelf. I've started turning its pot a quarter turn each week so the other side can make bad decisions too.",
+    "choices": [
+      "houseplants",
+      "gardening",
+      "plantclinic",
+      "DIY"
+    ],
+    "answerSubreddit": "houseplants",
+    "threadTitle": "One vine is reaching behind the furniture",
+    "cultureHint": "Rotation evens out indoor growth toward a light source.",
+    "explanation": "Indoor vines and rotating a pot toward the available light belong to houseplant care.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-018",
+    "body": "I kept saying I'd stop at the end of the chapter. The author put six chapters in the final twenty pages, which feels like a deliberate attack on a bedtime routine.",
+    "choices": [
+      "books",
+      "suggestmeabook",
+      "movies",
+      "WritingPrompts"
+    ],
+    "answerSubreddit": "books",
+    "threadTitle": "The ending was hard to put down",
+    "cultureHint": "The focus is the experience of reading a finished work.",
+    "explanation": "Short late chapters and losing track of bedtime are familiar reader conversation.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-019",
+    "body": "We carried a whole onion up three switchbacks because it felt rude to leave it behind. Nobody was sentimental about it on the walk down.",
+    "choices": [
+      "CampingandHiking",
+      "running",
+      "travel",
+      "Ultralight"
+    ],
+    "answerSubreddit": "CampingandHiking",
+    "threadTitle": "The first time everyone chose their own trail dinner",
+    "cultureHint": "Gear and food weight feel different after a climb.",
+    "explanation": "Switchbacks, trail meals and packing regrets are typical camping-and-hiking stories.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-020",
+    "body": "I turned the burner off five minutes ago and the second pancake is cooking faster than the first. The pan appears to have its own business hours.",
+    "choices": [
+      "castiron",
+      "Cooking",
+      "AskCulinary",
+      "BuyItForLife"
+    ],
+    "answerSubreddit": "castiron",
+    "threadTitle": "The skillet needed much longer to preheat",
+    "cultureHint": "Some heavy cookware retains a surprising amount of heat.",
+    "explanation": "Long preheat and residual skillet heat are particular concerns for cast iron cooks.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-021",
+    "body": "The monitor was black for two days. I had checked every cable except the kettle lead I'd borrowed to make tea.",
+    "choices": [
+      "techsupport",
+      "HomeNetworking",
+      "pcmasterrace",
+      "webdev"
+    ],
+    "answerSubreddit": "techsupport",
+    "threadTitle": "No signal on a desk that used to work",
+    "cultureHint": "Separate power and data before blaming the display.",
+    "explanation": "Tracing an ordinary missing power cable is a classic troubleshooting resolution.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-022",
+    "body": "I brought the town's grumpiest man a pepper every week for a year. At some point the game called this friendship and so did I.",
+    "choices": [
+      "StardewValley",
+      "Minecraft",
+      "CozyGamers",
+      "AnimalCrossing"
+    ],
+    "answerSubreddit": "StardewValley",
+    "threadTitle": "The least romantic route to a high friendship level",
+    "cultureHint": "Gift preferences and a game calendar drive the relationship.",
+    "explanation": "Giving a favorite pepper repeatedly to a villager fits Stardew's friendship system.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-023",
+    "body": "I lowered the saddle two millimeters and spent the whole ride convinced I could feel both of them.",
+    "choices": [
+      "bicycling",
+      "running",
+      "fitness",
+      "mechanicadvice"
+    ],
+    "answerSubreddit": "bicycling",
+    "threadTitle": "Even a tiny fit adjustment changes the weekend loop",
+    "cultureHint": "This kind of seat is adjusted to change a rider's position.",
+    "explanation": "Tiny saddle changes and on-road fit impressions are characteristic cycling talk.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-024",
+    "body": "The sticker on my new notebook says easy peel. It peeled in seventeen pieces and left the word easy in glue.",
+    "choices": [
+      "mildlyinfuriating",
+      "firstworldproblems",
+      "CrappyDesign",
+      "LifeProTips"
+    ],
+    "answerSubreddit": "mildlyinfuriating",
+    "threadTitle": "A barcode label came off one letter at a time",
+    "cultureHint": "Small everyday irritation is the whole subject.",
+    "explanation": "A misbehaving sticker on an otherwise ordinary purchase is exactly the scale of irritation here.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-025",
+    "body": "I gave them melon rind and half my junk mail. By Tuesday the envelopes were winning, which tells you what the apartment smells like after rain.",
+    "choices": [
+      "Vermiculture",
+      "gardening",
+      "composting",
+      "ZeroWaste"
+    ],
+    "answerSubreddit": "Vermiculture",
+    "threadTitle": "A worm bin is a little too damp",
+    "cultureHint": "Paper acts as dry bedding for the living compost workers.",
+    "explanation": "Balancing wet scraps with shredded paper is specific to indoor worm composting.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-026",
+    "body": "I hardened the seedlings off for a week, and the first thing they did outside was flop over like I'd made them take a red-eye.",
+    "choices": [
+      "Gardening",
+      "houseplants",
+      "plantclinic",
+      "DIY"
+    ],
+    "answerSubreddit": "Gardening",
+    "threadTitle": "Moving trays from a windowsill into the beds",
+    "cultureHint": "Plants are being acclimated to outdoor sun and wind.",
+    "explanation": "Hardening off seedling trays is a recognizable outdoor gardening ritual.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-027",
+    "body": "The cleric burned Guidance on the lock, rolled a three anyway, and confessed. The bard used Vicious Mockery on the door. We're forty minutes into a locked-room puzzle and the door has a nickname.",
+    "choices": [
+      "dndnext",
+      "Pathfinder_RPG",
+      "boardgames",
+      "WritingPrompts"
+    ],
+    "answerSubreddit": "dndnext",
+    "threadTitle": "An evening when the party's plan goes sideways",
+    "cultureHint": "One player adds a bonus to the roll and another uses a spell that insults its target.",
+    "explanation": "Vicious Mockery is a D&D bard spell. Adapting spells around a failed check is classic fifth-edition table talk.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-028",
+    "body": "I checked turnip prices before opening my work email. The shopkeeper was down forty bells, which was already enough workplace stress for one morning.",
+    "choices": [
+      "AnimalCrossing",
+      "StardewValley",
+      "CozyGamers",
+      "gaming"
+    ],
+    "answerSubreddit": "AnimalCrossing",
+    "threadTitle": "Tuesday's vegetable prices are disappointing",
+    "cultureHint": "The item has a changing price and the currency is bells.",
+    "explanation": "Turnip speculation and bells identify Animal Crossing's weekly stalk market.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-029",
+    "body": "I added pockets and shortened the hem. The instructions said intermediate, which I now understand means own an iron and a healthy fear of seam allowances.",
+    "choices": [
+      "Sewing",
+      "knitting",
+      "Visiblemending",
+      "DIY"
+    ],
+    "answerSubreddit": "Sewing",
+    "threadTitle": "Making a wearable version of a paper pattern",
+    "cultureHint": "A seam allowance changes how much cloth is left inside a garment.",
+    "explanation": "Paper garment patterns, pockets, hems and pressing all point to sewing.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-030",
+    "body": "The second syllable vanished in my recording, but only when I was trying to say the word naturally. The careful reading had been lying to me.",
+    "choices": [
+      "linguistics",
+      "languagelearning",
+      "EnglishLearning",
+      "AskAcademia"
+    ],
+    "answerSubreddit": "linguistics",
+    "threadTitle": "Looking at two recordings of the same phrase",
+    "cultureHint": "The question is what sounds speakers produce in connected speech.",
+    "explanation": "Syllable reduction and comparing careful with natural speech are linguistic analysis.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-031",
+    "body": "I put race-day socks in my bag a week early. On the morning of the race I left the bag at home and got a personal best in grocery-store socks.",
+    "choices": [
+      "running",
+      "fitness",
+      "AdvancedRunning",
+      "CampingandHiking"
+    ],
+    "answerSubreddit": "running",
+    "threadTitle": "Lessons from a first timed road race",
+    "cultureHint": "The personal best is a finish time.",
+    "explanation": "A timed race, personal best and distinctly nonessential gear are regular running subjects.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-032",
+    "body": "Package tracking said delivered. My neighbor opened the box, saw a bag of sixty little switches, and asked which appliance I was planning to repair.",
+    "choices": [
+      "MechanicalKeyboards",
+      "pcmasterrace",
+      "fountainpens",
+      "techsupport"
+    ],
+    "answerSubreddit": "MechanicalKeyboards",
+    "threadTitle": "A mail mix-up before a hobby build",
+    "cultureHint": "Each switch is meant for one position on a typing device.",
+    "explanation": "Buying individual switches in bulk points to a keyboard build.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-033",
+    "body": "I made a cardboard jig before drilling the hook rail. It cost nothing and lined everything up except the part where I held it upside down.",
+    "choices": [
+      "DIY",
+      "HomeImprovement",
+      "woodworking",
+      "Frugal"
+    ],
+    "answerSubreddit": "DIY",
+    "threadTitle": "Putting up hooks in a rented entryway",
+    "cultureHint": "A temporary guide transfers hole positions to the work.",
+    "explanation": "Improvising a drilling jig for a small household mounting project fits DIY.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-034",
+    "body": "I finished the border first, then realized the designer printed an entire border inside the picture. I have built four convincing rectangles and no corners.",
+    "choices": [
+      "puzzles",
+      "crossword",
+      "boardgames",
+      "chess"
+    ],
+    "answerSubreddit": "puzzles",
+    "threadTitle": "A deceptively tricky picture on the table",
+    "cultureHint": "Here pieces that look like edges can belong inside the image.",
+    "explanation": "A misleading border plays on a common jigsaw assembly strategy.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-035",
+    "body": "My feeder is two feet from the window and the titmouse still waited for me to look down. It took one seed like we were both embarrassed by the transaction.",
+    "choices": [
+      "birds",
+      "birding",
+      "aww",
+      "photography"
+    ],
+    "answerSubreddit": "birds",
+    "threadTitle": "Which visitor is making quick trips to a feeder",
+    "cultureHint": "This is a backyard observation, with the visitor already identified.",
+    "explanation": "Watching familiar birds at a feeder is distinct from an identification-focused field report.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-036",
+    "body": "I wrote a new personal record in the notes app, then spent five minutes trying to carry a full laundry basket up the stairs without setting it down.",
+    "choices": [
+      "fitness",
+      "running",
+      "bodyweightfitness",
+      "progresspics"
+    ],
+    "answerSubreddit": "fitness",
+    "threadTitle": "A big lifting day followed by chores",
+    "cultureHint": "A gym performance is measured by weight or repetitions.",
+    "explanation": "The contrast between a strength milestone and everyday effort belongs to general fitness talk.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-037",
+    "body": "I shifted the highlight one square left and the character stopped looking worried. The entire expression is four dots and a professional disagreement.",
+    "choices": [
+      "pixelart",
+      "Art",
+      "indiegames",
+      "animation"
+    ],
+    "answerSubreddit": "pixelart",
+    "threadTitle": "Changing the face on a tiny sprite",
+    "cultureHint": "A single grid cell can change a character's expression.",
+    "explanation": "Expressions made from a few individual pixels are the focus of sprite art.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-038",
+    "body": "The cake tester was clean but the middle sank as soon as I opened the door. I now have an extremely efficient container for whipped cream.",
+    "choices": [
+      "Baking",
+      "Cooking",
+      "AskCulinary",
+      "Breadit"
+    ],
+    "answerSubreddit": "Baking",
+    "threadTitle": "What to do with a sunken sponge",
+    "cultureHint": "The problem happens when a cake structure fails to hold after rising.",
+    "explanation": "Sponge collapse, oven timing and topping-based salvage are baking concerns.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-039",
+    "body": "I made a price book for groceries. My oldest entry is a packet of lentils I still haven't cooked, so at least one of my numbers has held steady.",
+    "choices": [
+      "Frugal",
+      "ZeroWaste",
+      "BuyItForLife",
+      "personalfinance"
+    ],
+    "answerSubreddit": "Frugal",
+    "threadTitle": "Tracking the cheapest staples by unit price",
+    "cultureHint": "A price book compares recurring purchases across stores.",
+    "explanation": "Keeping unit-price records to buy staples more cheaply fits frugal shopping habits.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-040",
+    "body": "Every turn I took the action space the next player needed and went home with negative points. Apparently petty efficiency is not a victory condition.",
+    "choices": [
+      "boardgames",
+      "chess",
+      "gaming",
+      "DnD"
+    ],
+    "answerSubreddit": "boardgames",
+    "threadTitle": "A tense first worker-placement night",
+    "cultureHint": "Occupied action spaces can block another player for a round.",
+    "explanation": "Taking contested action spaces and scoring negative victory points indicate a strategy board game.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-041",
+    "body": "The trailhead sign said seasonal water. We walked an hour to find a dry creek and the only wet thing was the map inside my rain jacket.",
+    "choices": [
+      "CampingandHiking",
+      "Ultralight",
+      "travel",
+      "running"
+    ],
+    "answerSubreddit": "CampingandHiking",
+    "threadTitle": "An overnight route in late summer",
+    "cultureHint": "A water source marked on a map can be unreliable when planning a trail.",
+    "explanation": "Trailhead signs, water planning and wet gear are familiar backcountry preparation topics.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-042",
+    "body": "I ran the benchmark three times, gained two frames, and spent dinner telling people I had optimized the household.",
+    "choices": [
+      "pcmasterrace",
+      "buildapc",
+      "techsupport",
+      "gaming"
+    ],
+    "answerSubreddit": "pcmasterrace",
+    "threadTitle": "A minor upgrade with a dramatic announcement",
+    "cultureHint": "Frames per second are being treated as a household achievement.",
+    "explanation": "Benchmark bragging and over-celebrating a tiny frame-rate gain fit PC enthusiast humor.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-043",
+    "body": "I put in a lifeline before the lace repeat. This is the first time in my life I backed up a sock before making changes.",
+    "choices": [
+      "knitting",
+      "crochet",
+      "Sewing",
+      "Visiblemending"
+    ],
+    "answerSubreddit": "knitting",
+    "threadTitle": "An extra thread running through a row of live stitches",
+    "cultureHint": "The extra thread can catch a row if stitches have to be undone.",
+    "explanation": "A lifeline threaded through live stitches protects a knitting project when it is unraveled.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-044",
+    "body": "I said I'd taste for seasoning. Four spoonfuls later the soup was balanced and I needed to make another serving.",
+    "choices": [
+      "cooking",
+      "Baking",
+      "MealPrepSunday",
+      "AskCulinary"
+    ],
+    "answerSubreddit": "cooking",
+    "threadTitle": "Getting soup ready for one more person",
+    "cultureHint": "Repeated tasting adjusts a savory dish on the stove.",
+    "explanation": "Adjusting a soup by taste fits everyday cooking more than a specialist technique problem.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-045",
+    "body": "An alarm clock is the only household object I reward for a job well done by immediately hitting it.",
+    "choices": [
+      "showerthoughts",
+      "AskReddit",
+      "CasualConversation",
+      "philosophy"
+    ],
+    "answerSubreddit": "showerthoughts",
+    "threadTitle": "An observation before the first coffee",
+    "cultureHint": "No advice or conversation is being requested; the familiar thing is reframed.",
+    "explanation": "The compact twist on an ordinary object is a standalone shower-thought observation.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-046",
+    "body": "I put the dipole in the attic and finally got a reply from two states away. My neighbor still can't get me to answer a text.",
+    "choices": [
+      "hamradio",
+      "electronics",
+      "HomeNetworking",
+      "techsupport"
+    ],
+    "answerSubreddit": "hamradio",
+    "threadTitle": "First long-distance contact from the attic",
+    "cultureHint": "An antenna and a contact are both part of a radio setup.",
+    "explanation": "A dipole and a distant contact signal amateur radio rather than home networking.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-047",
+    "body": "My grandmother says she dressed badly in the seventies. I found this photo of her in a cable knit sweater leaning against a motorcycle and would like to appeal the ruling.",
+    "choices": [
+      "OldSchoolCool",
+      "photography",
+      "analog",
+      "movies"
+    ],
+    "answerSubreddit": "OldSchoolCool",
+    "threadTitle": "A family snapshot from the mid-seventies",
+    "cultureHint": "The interest is how stylish the relative looks in the old photo.",
+    "explanation": "Family photos with striking vintage style are the point of OldSchoolCool.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-048",
+    "body": "I peeled one loose corner of paint and discovered three colors and a drywall patch shaped like Ohio. The listing called the walls freshly finished.",
+    "choices": [
+      "HomeImprovement",
+      "DIY",
+      "homeowners",
+      "woodworking"
+    ],
+    "answerSubreddit": "HomeImprovement",
+    "threadTitle": "What's under the surface in an old house",
+    "cultureHint": "Paint layers and wall repairs point to keeping a house in shape.",
+    "explanation": "Diagnosing old wall finishes and a suspect patch fits home renovation discussion.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-049",
+    "body": "The bus driver remembered where I get off even though I only take that route on Wednesdays. I don't have a question. It just made the morning better.",
+    "choices": [
+      "CasualConversation",
+      "AskReddit",
+      "aww",
+      "firstworldproblems"
+    ],
+    "answerSubreddit": "CasualConversation",
+    "threadTitle": "A tiny good thing that happened on the way in",
+    "cultureHint": "The story is an invitation to share a moment, with no advice needed.",
+    "explanation": "Small pleasant encounters told conversationally fit a low-key discussion community.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-050",
+    "body": "I choked the machine, moved the grinder one notch, and got a jet that hit the backsplash. The middle setting exists only in theory.",
+    "choices": [
+      "espresso",
+      "coffee",
+      "Cooking",
+      "BuyItForLife"
+    ],
+    "answerSubreddit": "espresso",
+    "threadTitle": "Two very different pulls from the same basket",
+    "cultureHint": "A tight puck can stop a shot; uneven flow can spray under pressure.",
+    "explanation": "Choked shots and channeling under pressure are espresso-specific frustrations.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-051",
+    "body": "We ran out of table space halfway through setup, so the first house rule was that the bread basket could hold the bank.",
+    "choices": [
+      "boardgames",
+      "gaming",
+      "chess",
+      "puzzles"
+    ],
+    "answerSubreddit": "boardgames",
+    "threadTitle": "Setup was heavier than the box suggested",
+    "cultureHint": "A physical game's components need room on a shared table.",
+    "explanation": "Table footprint, setup and a physical bank fit board game night.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-052",
+    "body": "The blanket was turning into a trapezoid until I clipped a marker into the first stitch of every row. Twenty years of counting and I still needed a breadcrumb trail.",
+    "choices": [
+      "crochet",
+      "knitting",
+      "Sewing",
+      "Visiblemending"
+    ],
+    "answerSubreddit": "crochet",
+    "threadTitle": "Finding the lost stitch at the edge",
+    "cultureHint": "A hook project can lose the first or last stitch at each turning row.",
+    "explanation": "Stitch markers at turns solve a common crochet blanket shaping problem.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-053",
+    "body": "I left the bed next to the chest in the other dimension. The chest survived and the hole where my workshop was has excellent ventilation.",
+    "choices": [
+      "Minecraft",
+      "Terraria",
+      "StardewValley",
+      "gaming"
+    ],
+    "answerSubreddit": "Minecraft",
+    "threadTitle": "First attempt at making a second base",
+    "cultureHint": "An ordinary bed becomes dangerous in a different dimension.",
+    "explanation": "Exploding beds outside the Overworld are a specific block-world mechanic.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-054",
+    "body": "There are seven identical lunches in the fridge and one extra container of lemon sauce. Thursday me has never been this well supported.",
+    "choices": [
+      "MealPrepSunday",
+      "Cooking",
+      "Frugal",
+      "fitness"
+    ],
+    "answerSubreddit": "MealPrepSunday",
+    "threadTitle": "Packing the workweek in one afternoon",
+    "cultureHint": "Batching and portioning ahead are the important details.",
+    "explanation": "A fridge full of identical weekly portions is classic meal-prep planning.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-055",
+    "body": "The drive bay is full, but I made room on an older disk by deleting a copy of the copy. The free space made me more nervous than the warning light.",
+    "choices": [
+      "DataHoarder",
+      "HomeNetworking",
+      "techsupport",
+      "pcmasterrace"
+    ],
+    "answerSubreddit": "DataHoarder",
+    "threadTitle": "Debating what actually counts as a backup",
+    "cultureHint": "Space pressure is weighed against keeping redundant copies.",
+    "explanation": "Drive capacity and attachment to redundant archives fit personal data preservation.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-056",
+    "body": "I asked everyone to hold still for a long exposure. The only sharp thing in the photo is the dog who refused to participate and sat down.",
+    "choices": [
+      "photography",
+      "Art",
+      "analog",
+      "travel"
+    ],
+    "answerSubreddit": "photography",
+    "threadTitle": "Trying a tripod group shot after sunset",
+    "cultureHint": "A stationary subject stays sharp while everyone else moves.",
+    "explanation": "Tripod use and subject motion during long exposures are photography fundamentals.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-057",
+    "body": "The door won't open because I built the wall half a stud too far forward. My family would like to know why a shoebox-sized house has a building inspector.",
+    "choices": [
+      "lego",
+      "modelmakers",
+      "DIY",
+      "boardgames"
+    ],
+    "answerSubreddit": "lego",
+    "threadTitle": "Moving a tiny door frame without dismantling the wall",
+    "cultureHint": "The offset is measured in a modular brick's connection points.",
+    "explanation": "Half-stud offsets and redesigning miniature brick structures point to Lego building.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-058",
+    "body": "I walked out before lunch to see if I could find Venus in the daylight. A delivery driver looked up with me, so now there are two of us pretending that tiny white dot is obvious.",
+    "choices": [
+      "astronomy",
+      "astrophotography",
+      "photography",
+      "space"
+    ],
+    "answerSubreddit": "astronomy",
+    "threadTitle": "An unusually bright afternoon planet",
+    "cultureHint": "The goal is locating an object by eye without taking a picture.",
+    "explanation": "Naked-eye planet spotting is observational astronomy.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-059",
+    "body": "I spent three days protecting a flexible itinerary and then planned a whole morning around an egg sandwich from a train station.",
+    "choices": [
+      "JapanTravel",
+      "travel",
+      "solotravel",
+      "JapanLife"
+    ],
+    "answerSubreddit": "JapanTravel",
+    "threadTitle": "How much time to leave for a station connection",
+    "cultureHint": "Japanese rail stops and convenience-store food are part of the itinerary culture.",
+    "explanation": "Planning a Japan rail trip around a convenience-store sandwich is a recognizable traveler tangent.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-060",
+    "body": "I spent an hour connecting daily notes and got a lovely graph of all the things I could have finished during that hour.",
+    "choices": [
+      "ObsidianMD",
+      "Notion",
+      "productivity",
+      "bearapp"
+    ],
+    "answerSubreddit": "ObsidianMD",
+    "threadTitle": "Trying to get value out of backlinks",
+    "cultureHint": "A visual graph is populated by links inside local notes.",
+    "explanation": "Backlinks and an automatically generated note graph are signature Obsidian workflows.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-061",
+    "body": "My cat learned to open the bathroom door but will sit outside a box with no lid and ask for help. His skill tree is very uneven.",
+    "choices": [
+      "cats",
+      "CatAdvice",
+      "aww",
+      "catswithjobs"
+    ],
+    "answerSubreddit": "cats",
+    "threadTitle": "Two mysteries from the same afternoon",
+    "cultureHint": "The appeal is a familiar pet behaving inconsistently.",
+    "explanation": "An affectionate observation about a cat's contradictory behavior fits general cat discussion.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-062",
+    "body": "My bike lane ended at an on-ramp to the 110 and reappeared in front of a taco shop. At least the route has a recovery plan.",
+    "choices": [
+      "BikeLA",
+      "bicycling",
+      "LosAngeles",
+      "urbanplanning"
+    ],
+    "answerSubreddit": "BikeLA",
+    "threadTitle": "Trying a new east-side route after work",
+    "cultureHint": "The rider uses a freeway number as shorthand for a local route.",
+    "explanation": "The 110 runs through Los Angeles. A first-person report about where the bike lane disappears is especially useful to other local riders.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-063",
+    "body": "The squeak disappeared when I finally brought a mechanic along. Ten minutes later the car resumed its tiny violin solo. What should I check first if it goes quiet when I brake?",
+    "choices": [
+      "mechanicadvice",
+      "cars",
+      "DIY",
+      "Justrolledintotheshop"
+    ],
+    "answerSubreddit": "mechanicadvice",
+    "threadTitle": "Diagnosing a noise that won't happen on demand",
+    "cultureHint": "The driver wants a diagnosis, and touching the brakes changes the noise.",
+    "explanation": "Intermittent symptoms that disappear during diagnosis are a common repair advice problem.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-064",
+    "body": "The new ink feathers on office paper. I have solved this by tinting all of my meeting notes the color of a damp attic.",
+    "choices": [
+      "fountainpens",
+      "Calligraphy",
+      "Handwriting",
+      "MechanicalKeyboards"
+    ],
+    "answerSubreddit": "fountainpens",
+    "threadTitle": "Trying a bottle at work with ordinary paper",
+    "cultureHint": "Liquid ink can spread along paper fibers after it leaves a nib.",
+    "explanation": "Pairing bottled ink, nibs and office paper is a fountain pen concern.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-065",
+    "body": "The middle of the pile was steaming when I turned it this morning. For once the neighbors were right to ask what I was cooking back there.",
+    "choices": [
+      "composting",
+      "gardening",
+      "Vermiculture",
+      "ZeroWaste"
+    ],
+    "answerSubreddit": "composting",
+    "threadTitle": "First time the heap heated up after adding dry leaves",
+    "cultureHint": "Microbes warm a well-balanced pile as materials break down.",
+    "explanation": "Heat and turning a backyard heap point to hot composting rather than worm bins.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-066",
+    "body": "The little library down the street has the second book in every trilogy I've ever started. I'm beginning to suspect it's run by a very patient antagonist.",
+    "choices": [
+      "books",
+      "suggestmeabook",
+      "WritingPrompts",
+      "BookCollecting"
+    ],
+    "answerSubreddit": "books",
+    "threadTitle": "An unusually specific pattern in a neighborhood exchange box",
+    "cultureHint": "The frustration is about reading a series in sequence.",
+    "explanation": "Finding missing volumes and joking about series order fits a general reading community.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-067",
+    "body": "I centered the banner and somehow moved the footer into the header. Everyone says browser layout is declarative; mine has declared independence.",
+    "choices": [
+      "webdev",
+      "techsupport",
+      "learnprogramming",
+      "ProgrammerHumor"
+    ],
+    "answerSubreddit": "webdev",
+    "threadTitle": "A layout bug after a single style change",
+    "cultureHint": "The banner and footer belong to a web page.",
+    "explanation": "Interdependent page layout and styling are hands-on web development.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-068",
+    "body": "She nails the recall in the kitchen. At the park the same word seems to mean finish interviewing this pigeon and get back to me next quarter.",
+    "choices": [
+      "dogtraining",
+      "dogs",
+      "DogAdvice",
+      "aww"
+    ],
+    "answerSubreddit": "dogtraining",
+    "threadTitle": "Trying a cue around distractions",
+    "cultureHint": "The dog knows a cue in one setting and needs practice in a harder one.",
+    "explanation": "Generalizing a recall cue from indoors to distractions is a specific dog-training problem.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-069",
+    "body": "The tall print came loose four hours in. I now own a perfectly respectable three-inch version of a seven-inch thing.",
+    "choices": [
+      "3Dprinting",
+      "functionalprint",
+      "DIY",
+      "modelmakers"
+    ],
+    "answerSubreddit": "3Dprinting",
+    "threadTitle": "A part lost adhesion close to midnight",
+    "cultureHint": "A machine builds the object in layers, and holding the base down matters.",
+    "explanation": "Build plate adhesion and a partially completed tall print are 3D printing concerns.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "daily"
+  },
+  {
+    "id": "fictional-daily-070",
+    "body": "I brought jars for the bulk aisle and forgot to have them weighed empty. For a moment I was paying by the pound for the same glass I brought from home.",
+    "choices": [
+      "ZeroWaste",
+      "Frugal",
+      "DIY",
+      "composting"
+    ],
+    "answerSubreddit": "ZeroWaste",
+    "threadTitle": "Getting the tare wrong at the refill shelf",
+    "cultureHint": "The shopper supplies reusable containers to avoid packaging.",
+    "explanation": "Bringing jars to refill and checking tare weight are recognizable low-waste shopping practices.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "daily"
+  }
+]

@@ -1,6 +1,13 @@
 import { Hono } from 'hono';
-import type { OnAppInstallRequest, TriggerResponse } from '@devvit/web/shared';
-import { context } from '@devvit/web/server';
+import type {
+  OnAppInstallRequest,
+  OnCommentDeleteRequest,
+  OnPostDeleteRequest,
+  TriggerResponse,
+} from '@devvit/web/shared';
+import { context, redis } from '@devvit/web/server';
+import { legacyCaseIds } from '../services/contentMaintenance.ts';
+import { withdrawContent } from '../services/contentBank.ts';
 import { createPost } from '../core/post.ts';
 
 export const triggers = new Hono();
@@ -27,4 +34,25 @@ triggers.post('/on-app-install', async (c) => {
       400
     );
   }
+});
+
+triggers.post('/comment-delete', async (c) => {
+  const { commentId } = await c.req.json<OnCommentDeleteRequest>();
+  if (!/^t1_[a-z0-9]+$/.test(commentId))
+    return c.json({ status: 'error' }, 400);
+  await withdrawContent(
+    redis,
+    commentId,
+    'Deleted or removed',
+    Date.now(),
+    legacyCaseIds(commentId)
+  );
+  return c.json({ status: 'success' });
+});
+
+triggers.post('/post-delete', async (c) => {
+  const { postId } = await c.req.json<OnPostDeleteRequest>();
+  if (!/^t3_[a-z0-9]+$/.test(postId)) return c.json({ status: 'error' }, 400);
+  await withdrawContent(redis, postId, 'Thread deleted or removed');
+  return c.json({ status: 'success' });
 });

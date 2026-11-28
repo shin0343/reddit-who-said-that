@@ -13,7 +13,9 @@
     "login": "devvit login",
     "prettier": "prettier --write .",
     "test:types": "tsc --build",
-    "test:unit": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test \"src/**/*.test.ts\""
+    "test:unit": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test \"src/**/*.test.ts\"",
+    "demo": "npm run build && node --disable-warning=ExperimentalWarning tools/demo.mjs",
+    "validate:content": "node --experimental-strip-types --no-warnings=ExperimentalWarning --test src/server/content/fictional/content.test.ts"
   },
   "engines": {
     "node": ">=24.0.0"

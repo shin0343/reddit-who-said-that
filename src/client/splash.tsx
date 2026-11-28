@@ -3,18 +3,19 @@ import './index.css';
 import { requestExpandedMode } from '@devvit/web/client';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { AgencyHero } from './games/who-said-that/Brand';
 
-// Inline (feed) view. Keep it light: no data fetching beyond what the hook needs.
-// TODO(Phase 2): show today's streak / "solved 3 of 5" from a cheap endpoint.
 export const Splash = () => (
-  <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[var(--bg)] px-6 text-center text-[var(--fg)]">
-    <h1 className="text-3xl font-black tracking-tight">Who Said That?</h1>
-    <p className="max-w-xs text-sm text-[var(--muted)]">One comment. Four subreddits. Can you tell which community wrote it?</p>
+  <main className="splash-frame">
+    <AgencyHero />
+    <p className="text-[var(--muted)]">
+      Read the comment. Guess its community.
+    </p>
     <button
-      className="h-11 rounded-full bg-[var(--accent)] px-6 font-semibold text-white"
+      className="game-button button-primary"
       onClick={(e) => requestExpandedMode(e.nativeEvent, 'game')}
     >
-      Open today's case
+      Open today’s case
     </button>
   </main>
 );

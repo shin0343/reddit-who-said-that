@@ -1,0 +1,87 @@
+[
+  {
+    "id": "fictional-tutorial-001",
+    "body": "I put a heated bed in the window. She dragged the shipping box into the sun and slept in that until dinner.",
+    "choices": [
+      "cats",
+      "dogs",
+      "aww",
+      "CatAdvice"
+    ],
+    "answerSubreddit": "cats",
+    "threadTitle": "A new bed gets a very clear review",
+    "cultureHint": "The pet prefers a cardboard box even when a better bed is available.",
+    "explanation": "A cat choosing the shipping box over a fancy new bed is a familiar owner story.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "tutorial"
+  },
+  {
+    "id": "fictional-tutorial-002",
+    "body": "I iced twelve cupcakes and then found the last one hiding behind the muffin tin. It is now a quality-control sample.",
+    "choices": [
+      "Baking",
+      "Cooking",
+      "AskCulinary",
+      "Breadit"
+    ],
+    "answerSubreddit": "Baking",
+    "threadTitle": "A dozen with one unexpected extra",
+    "cultureHint": "Frosting individual oven treats is part of the task.",
+    "explanation": "Cupcake batches and frosting place the joke in baking.",
+    "difficulty": "easy",
+    "source": "fictional",
+    "pool": "tutorial"
+  },
+  {
+    "id": "fictional-tutorial-003",
+    "body": "I rolled the toothpaste tube so carefully that I got six more days out of it. The new tube has been on the counter the whole time, learning what to expect.",
+    "choices": [
+      "Frugal",
+      "BuyItForLife",
+      "DIY",
+      "ZeroWaste"
+    ],
+    "answerSubreddit": "Frugal",
+    "threadTitle": "Getting every use out of a routine purchase",
+    "cultureHint": "Putting off a replacement saves a little money repeatedly.",
+    "explanation": "Extracting the last usable amount of a consumable is classic everyday thrift.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "tutorial"
+  },
+  {
+    "id": "fictional-tutorial-004",
+    "body": "I raised the shutter speed until the wings looked sharp. The background immediately got dark enough to suggest the bird was flying at midnight.",
+    "choices": [
+      "photography",
+      "astronomy",
+      "Art",
+      "analog"
+    ],
+    "answerSubreddit": "photography",
+    "threadTitle": "Freezing fast motion in a bright yard",
+    "cultureHint": "Less time with the shutter open reduces exposure.",
+    "explanation": "Balancing motion blur and exposure when shooting a moving subject is a photography problem.",
+    "difficulty": "medium",
+    "source": "fictional",
+    "pool": "tutorial"
+  },
+  {
+    "id": "fictional-tutorial-005",
+    "body": "I traced the old screw holes onto paper, flipped it over, and drilled an exact mirror image of the problem I started with.",
+    "choices": [
+      "DIY",
+      "HomeImprovement",
+      "Frugal",
+      "woodworking"
+    ],
+    "answerSubreddit": "DIY",
+    "threadTitle": "Making a template for a household repair",
+    "cultureHint": "The work transfers a hole pattern instead of measuring each gap.",
+    "explanation": "Using a paper drilling template in a small household repair fits practical DIY.",
+    "difficulty": "hard",
+    "source": "fictional",
+    "pool": "tutorial"
+  }
+]

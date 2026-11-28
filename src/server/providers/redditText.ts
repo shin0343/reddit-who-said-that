@@ -10,7 +10,7 @@ export const COMMENT_MAX_CHARS = 400;
  */
 export const parseCommentRef = (input: string): `t1_${string}` | null => {
   const s = input.trim();
-  const bare = /^(?:t1_)?([a-z0-9]{3,12})$/i.exec(s);
+  const bare = /^(?:t1_)?([a-z0-9]{3,16})$/i.exec(s);
   if (bare) return `t1_${bare[1]!.toLowerCase()}`;
   // New share format: /r/sub/comments/<post>/comment/<comment>/
   const shareUrl = /\/comments\/[a-z0-9]+\/comment\/([a-z0-9]+)/i.exec(s);
@@ -48,9 +48,11 @@ export const checkCaseBody = (body: string, answerSubreddit: string): BodyCheck 
   if (body === '[deleted]' || body === '[removed]' || body === '') return { ok: false, reason: 'deleted' };
   if (body.length < COMMENT_MIN_CHARS) return { ok: false, reason: 'too-short' };
   if (body.length > COMMENT_MAX_CHARS) return { ok: false, reason: 'too-long' };
-  const escaped = answerSubreddit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  if (new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, 'i').test(body)) {
-    return { ok: false, reason: 'mentions-answer' };
-  }
+  if (mentionsSubreddit(body, answerSubreddit)) return { ok: false, reason: 'mentions-answer' };
   return { ok: true };
+};
+
+export const mentionsSubreddit = (text: string, subreddit: string): boolean => {
+  const escaped = subreddit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, 'i').test(text);
 };

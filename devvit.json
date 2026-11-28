@@ -19,8 +19,17 @@
   },
   "permissions": {
     "redis": true,
-    "realtime": false,
+    "realtime": true,
     "reddit": { "enable": true }
+  },
+  "settings": {
+    "subreddit": {
+      "partyEnabled": {
+        "type": "boolean",
+        "label": "Enable Multiplayer Party",
+        "defaultValue": true
+      }
+    }
   },
   "menu": {
     "items": [
@@ -33,8 +42,26 @@
       }
     ]
   },
+  "scheduler": {
+    "tasks": {
+      "daily-rollover": {
+        "endpoint": "/internal/scheduler/daily",
+        "cron": "0 0 * * *"
+      },
+      "daily-prepare": {
+        "endpoint": "/internal/scheduler/prepare",
+        "cron": "45 23 * * *"
+      },
+      "content-sweep": {
+        "endpoint": "/internal/scheduler/sweep",
+        "cron": "*/10 * * * *"
+      }
+    }
+  },
   "triggers": {
-    "onAppInstall": "/internal/triggers/on-app-install"
+    "onAppInstall": "/internal/triggers/on-app-install",
+    "onCommentDelete": "/internal/triggers/comment-delete",
+    "onPostDelete": "/internal/triggers/post-delete"
   },
   "scripts": {
     "dev": "vite build --watch",
