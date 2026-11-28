@@ -1,6 +1,6 @@
 {
   "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
-  "name": "who-said-that",
+  "name": "who-said-that-jh-hi",
   "post": {
     "dir": "dist/client",
     "entrypoints": {
@@ -20,7 +20,9 @@
   "permissions": {
     "redis": true,
     "realtime": true,
-    "reddit": { "enable": true }
+    "reddit": {
+      "enable": true
+    }
   },
   "settings": {
     "subreddit": {
@@ -66,5 +68,8 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build"
+  },
+  "dev": {
+    "subreddit": "who_said_that_jh__dev"
   }
 }

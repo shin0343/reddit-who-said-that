@@ -4,7 +4,29 @@
 
 ## Step 6.1 platform status
 
-`npx devvit whoami` returned `Not currently logged in`. The existing Step 6 local results below remain the recorded evidence. No hosted version, live gameplay results, or submission URLs have been verified.
+`npx devvit whoami` passed after browser approval. Devvit uploaded and installed **0.0.1** from commit `804a1c14303eb0410dcca2d37008d51b4873e7b8` with app registration metadata updated by the CLI. The install trigger created the [Interactive Post](https://www.reddit.com/r/who_said_that_jh__dev/comments/1y78hfj/who_said_that_todays_case/). Verified in desktop Reddit on the owner account.
+
+- The inline preview expanded into the game. Fictional Daily completed five rounds. Correct and incorrect reveals appeared. A clue was opened, and reopening the mode restored the revealed round. The leaderboard displayed one finisher, four solved, **510 points**, and rank **1**. The results included the Streak section and UTC countdown.
+- Party creation and the 1/6 lobby passed. The client reported **Live**. Two-account gameplay, Realtime message delivery, polling recovery and final rank agreement remain unverified.
+- The test community is private and signed-out access is denied. Devvit Admin Helper 0.0.6 is installed. Direct judge access and access from an independent Reddit account remain unverified. No public visibility changes were made.
+- The Step 6 local results below are historical evidence. This pass used Devvit's upload build and the live installation.
+
+## Step 6.5 public access and operations
+
+- Reviewed the subreddit before visibility changed. Its only post was the Interactive Post with Reddit's standard old-Reddit fallback body. It had zero comments and no additional test posts.
+- The owner authorized a private-to-public change. Submitted the request in Reddit Mod Tools. Reddit reported `public` and two members after the change. An independent, signed-out browser opened the same [Demo Post](https://www.reddit.com/r/who_said_that_jh__dev/comments/1y78hfj/who_said_that_todays_case/). The [App Listing](https://developers.reddit.com/apps/who-said-that-jh-hi) responded to the authenticated Devvit CLI. Devvit still listed the game at **0.0.1** and the Admin Helper at **0.0.6**.
+- The public host lobby opened with one seat, **Live** status and Start Game disabled until a guest could ready up. A second signed-in non-moderator session was unavailable at this checkpoint. Ordinary-account Daily, a five-round Party match, cross-account Realtime events, reconnect and polling recovery are still pending.
+- The upload-build fingerprint matches the server output for the recorded gameplay commit. The saved client and server bundles contain no localhost identity or transport markers. The registered app slug and default subreddit are Devvit metadata changes. No gameplay source changed and no new version was uploaded.
+- In the live moderator session, **Game data** opened the deletion confirmation, **Contribute a comment** opened the opt-in form, and **Content curation** reported zero approved comments. The check preserved existing data. Ordinary-account permission separation and deletion execution are unverified.
+- The live Daily used the November 28 UTC fictional pack and displayed the UTC countdown. Scheduler jobs are present in the uploaded configuration, but the historical installation log showed no Scheduler execution signals. The next UTC rollover was not observed. The previously verified rotation covers the judging window. No Reddit comment was contributed or approved.
+
+### Manual second-account and device checks
+
+1. In a browser session signed in as a non-moderator, open the public Demo Post and select **Open today’s case**. Confirm the fictional label and the absence of **Content curation**. Play all five Daily rounds and confirm the report can be reopened.
+2. In the host browser, open **Multiplayer Party** and create a room. In the second browser, enter the host's current code and select **Ready up**. Start on the host. Compare the five comments and timers, deliberately choose different options, and record the reveal, vote distribution, and points after each round.
+3. During a round, refresh one browser and check that it keeps its seat, round and submitted guess. Verify the other account sees changes promptly while Live. Interrupt Realtime for one session, confirm polling updates while it shows Syncing, then restore connectivity. Compare the final rank and score on both screens.
+4. On a physical Android or iOS Reddit app, open the same post. Verify inline and expanded views, touch targets and scrolling with a long comment, hints, Lock In and reveal across a five-round Daily, sharing, and the Party lobby or match. Mark the device, app version and each observed outcome. **Physical device status: NOT TESTED.**
+5. At the next UTC midnight, compare the before and after pack and review the hosted Scheduler logs. Record both the date change and any direct evidence of scheduled execution. Game data deletion can be tested with a designated account whose test progress may be erased.
 
 ## Release verification
 

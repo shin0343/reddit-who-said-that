@@ -5,9 +5,9 @@ Any agent starting work on this repo reads this file first, then only the doc se
 ## 1. Purpose
 Entry for **Reddit's Game of the Day Hackathon 2026** (deadline **2026-12-08 18:00 PT**). *Who Said That?*: read an anonymous Reddit comment, guess which of 4 subreddits wrote it. Daily Case (5 cases/day) is the core; Party Room (2–6 live) is P1; more mini-games (Reddit Courtroom) may follow. Rules: `GAME_DESIGN.md`. Judging mapping: `HACKATHON_REQUIREMENTS.md` §3.
 
-## 2. Step 6 candidate verified locally
+## 2. Step 6 candidate installed on Reddit
 
-The Step 6 candidate includes Phases 2–5 and the local QA fixes. Community Detective is the original fictional mode. Real Case Files uses permission-verified Reddit comments when a pool can fill a game. There are zero approved Reddit comments. The live Reddit playtest is **BLOCKED** because Devvit CLI authentication is missing. [Release checklist](RELEASE_CHECKLIST.md) and [test report](TEST_REPORT.md) record the release gate and verified candidate.
+The Step 6 candidate includes Phases 2–5 and the local QA fixes. Community Detective is the original fictional mode. Real Case Files uses permission-verified Reddit comments when a pool can fill a game. There are zero approved Reddit comments. Devvit 0.0.1 is installed and the owner verified Daily. The test subreddit is now public and the existing post opens signed out. Ordinary signed-in gameplay and two-account Party remain open. [Release checklist](RELEASE_CHECKLIST.md) and [test report](TEST_REPORT.md) record the release gate and verified candidate.
 
 ## 3. Stack (fixed)
 Devvit Web 0.15.4 (official `devvit-template-react`), React 19, TS 6, Vite 8, Tailwind 4, Hono server, Devvit Redis / Realtime / Scheduler. Node ≥ 24. No tRPC, no external DB, no HTTP Fetch (it would trigger app review + a privacy policy).
@@ -57,9 +57,11 @@ src/server/games/who-said-that/   cases.ts (pure: seed validation, seeded shuffl
 
 - Step 6 reviewed 100 fictional cases and tested the December 8–17 UTC rotation. Local Chromium and WebKit tests passed. The 36-test suite includes judging-date and Party capacity coverage. The browser bundle remains 88,270 B gzip. Release documents and screenshot candidates are ready for live evidence.
 
+- Live Reddit verified the inline preview, expanded game, Fictional Daily five-round completion, clue, recovery and leaderboard. The Party lobby reported Live with one player.
+
 ## 7. Pending verification and work
 
-Step 6.1 confirmed that `npx devvit whoami` reports the CLI is signed out. Run `npx devvit login`, confirm ownership and existing releases for the intended app, then follow the approved rollout and open the test post with two accounts in separate sessions. Verify live scheduling, Redis conflicts, Reddit source access and deletion triggers, Realtime reconnect, and the mobile Reddit WebView.
+Authentication and installation are complete. Use the verified links and version in the release checklist. Verify independent access, two-account Party and native Realtime, hosted scheduling, account deletion intake, and mobile Reddit WebView.
 
 There are ten legacy Reddit comment references and no current permission-confirmed approvals. Phase 1a verified a cross-subreddit read in its playtest. The legacy seeds are candidates only. Obtain source permission, then approve 35 distinct Daily comments for 7 days or 70 for 14, plus at least five distinct Party comments. Confirm the production account-deletion intake with Reddit before publishing.
 
@@ -85,6 +87,6 @@ npm run deploy       # types + lint + devvit upload
 
 ## 10. Next
 
-1. The owner completes Devvit authentication and approves the public test access route. Verify the target name and version history before upload.
+1. Public visibility is confirmed. Open the existing post as a signed-in non-moderator. Keep the Admin Helper installed.
 2. Playtest and verify the final installation from two ordinary accounts and a physical mobile Reddit app. Record the listing, test subreddit and post links. Confirm the live account-deletion intake.
 3. Review the English [Devpost copy](DEVPOST_SUBMISSION.md) with the actual links. Submit only with owner approval. See the release checklist for judge access and the deadline freeze.

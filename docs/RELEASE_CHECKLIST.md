@@ -1,6 +1,6 @@
 # Step 6 release checklist
 
-**NOT READY.** The Step 6 candidate passed local verification. The official entry requires a working Reddit Interactive Post and verified listing, test subreddit, and demo links.
+**NOT READY.** The public demo link and installed version are verified. The owner completed a live Daily. Ordinary signed-in gameplay remains the release gate. Two-account Party, Realtime, and device coverage are additional QA.
 
 ## Readiness gate
 
@@ -9,15 +9,15 @@
 | Local Build | PASS | Production Vite build and pinned Devvit configuration and entrypoints |
 | Unit Tests | PASS | 36/36, including the original 34 |
 | Content Validation | PASS | 100 cases reviewed, 4/4 automated content and bundle checks |
-| Security Review | BLOCKED | Local review and targeted fixes complete. Native authorization, Redis behavior, and deletion intake remain open |
-| Real Reddit Daily | BLOCKED | CLI authentication |
-| Real Reddit Multiplayer | BLOCKED | CLI authentication and a second signed-in account |
-| Native Realtime | BLOCKED | Requires a Reddit installation |
-| Mobile Reddit WebView | BLOCKED | Requires the installed post and a real device |
-| App Listing URL | BLOCKED | Upload and ownership checks pending |
-| Accessible Demo Post | BLOCKED | Installation, approved access route and second-account check pending |
+| Security Review | BLOCKED | Upload bundles exclude localhost identity and transport. Moderator curation and deletion UI verified. Ordinary account permissions and deletion execution remain open |
+| Real Reddit Daily | PASS | Owner completed and resumed the five-round fictional Daily. Non-moderator play remains unverified |
+| Real Reddit Multiplayer | BLOCKED | Room creation and the host lobby passed. A second signed-in session is needed for a match |
+| Native Realtime | BLOCKED | The host lobby reported Live. Cross-account events and polling recovery are unverified |
+| Mobile Reddit WebView | NOT TESTED | Version 0.0.1 verified in desktop Reddit. A physical device is still needed |
+| App Listing URL | PASS | [Listing returned by Devvit](https://developers.reddit.com/apps/who-said-that-jh-hi) |
+| Accessible Demo Post | PASS | Public community with two members. The same post opens signed out. Ordinary signed-in gameplay is tracked separately. Devvit Admin Helper remains installed |
 | Daily Content Availability | PASS | Fictional schedule verified locally through judging. Hosted Scheduler verification is pending |
-| README | PASS | Root English README covers play, configuration and deployment. Live links are pending |
+| README | PASS | Root English README covers play, configuration and deployment |
 | English Project Description | PASS | [Devpost copy](DEVPOST_SUBMISSION.md) |
 | Content Compliance | PASS | Fictional submission inventory and provenance reviewed. Live consent and broader platform privacy checks remain open |
 | Demo Video | NOT TESTED | Optional. English storyboard and narration drafted. Video and public URL pending |
@@ -31,14 +31,14 @@ Submission closes **December 8, 2026 at 18:00 PST**. Judging runs **December 9 a
 
 | Record | Value |
 | --- | --- |
-| Base Git commit | `455ca88479a68f3e1694094a7bed23836d8da1d4` on `main` |
-| Candidate source | Steps 2–6 candidate recorded on `main`. At upload, record the exact Git SHA and deployed version together |
+| Candidate Git commit | `804a1c14303eb0410dcca2d37008d51b4873e7b8` on `main` and `origin/main` |
+| Candidate source | Devvit updated the app slug, package name and default test target on first upload. Gameplay source was unchanged and the server fingerprint matched |
 | Local build fingerprint | SHA-256 of `dist/server/index.cjs` is `c94db689f990a930a626f9936a6eb1eb7da057569c4bfe4d06cbe0339bf39c0e` |
 | Devvit CLI / Web / Start | 0.15.4 / 0.15.4 / 0.15.4 |
-| Configured app name | `who-said-that`. Availability, ownership and existing upload history are **UNVERIFIED** |
-| Package version | `0.0.0`. Devvit upload and installation version pending |
-| App Listing / Subreddit / Demo Post | Pending authenticated verification |
-| Step 6.1 authentication | `npx devvit whoami` returned `Not currently logged in`. Owner browser authentication is required |
+| Registered app | `who-said-that-jh-hi`, registered in the authenticated developer account |
+| Upload and install | **0.0.1**. Devvit listed the installed version and Devvit Admin Helper App **0.0.6** |
+| URLs | [App Listing](https://developers.reddit.com/apps/who-said-that-jh-hi) · [Public test subreddit](https://www.reddit.com/r/who_said_that_jh__dev/) · [Interactive Post](https://www.reddit.com/r/who_said_that_jh__dev/comments/1y78hfj/who_said_that_todays_case/) |
+| Authentication | CLI login and developer account onboarding completed |
 
 ## Reddit rollout
 
@@ -51,4 +51,4 @@ Submission closes **December 8, 2026 at 18:00 PST**. Judging runs **December 9 a
 
 ## Daily operations
 
-The rotation epoch is November 27 UTC. A public opening on December 8 PST is the proposed submission route, with private QA beforehand. The actual opening date is pending. December 8–17 UTC covers ten distinct five-case packs, including every judging day and the PST-to-UTC spillover on December 17. December 9 UTC uses cases 061–065. The existing rotation wraps December 11 UTC to pack 001–005. Players who saw that pack on November 27 UTC will see it again. The same formula applies to every player and environment. The Scheduler handles rollover, and the first request can also create the new day's pack. Keep deployed cases and existing Redis progress stable during judging. [Date and content evidence](TEST_REPORT.md)
+The rotation epoch is November 27 UTC. The owner-authorized public opening was November 27 PST. Gameplay was verified in the November 28 UTC pack. The installation went live after the UTC rollover. The next scheduled midnight rollover still needs confirmation. December 8–17 UTC covers ten distinct five-case packs, including every judging day and the PST-to-UTC spillover on December 17. December 9 UTC uses cases 061–065. The existing rotation wraps December 11 UTC to pack 001–005. Players who saw that pack on November 27 UTC will see it again. The same formula applies to every player and environment. The Scheduler handles rollover, and the first request can also create the new day's pack. Keep deployed cases and existing Redis progress stable during judging. [Date and content evidence](TEST_REPORT.md)

@@ -6,9 +6,9 @@
 
 | Devpost field | Value |
 | --- | --- |
-| App Listing URL | Pending owner browser authentication and Devvit upload |
-| Test Subreddit URL | Pending selection and access approval |
-| Demo Post URL | Pending installation and a second-account access check |
+| App Listing URL | [Who Said That? on Devvit](https://developers.reddit.com/apps/who-said-that-jh-hi) |
+| Test Subreddit URL | [Public test subreddit](https://www.reddit.com/r/who_said_that_jh__dev/). Devvit Admin Helper is installed |
+| Demo Post URL | [Interactive Post](https://www.reddit.com/r/who_said_that_jh__dev/comments/1y78hfj/who_said_that_todays_case/). Public post access and owner Daily play verified. Ordinary signed-in gameplay remains unverified |
 | Demo video (optional) | [55-second recording plan](VIDEO_STORYBOARD.md) |
 
 ## Inspiration
@@ -17,17 +17,17 @@ A community leaves fingerprints on its comments. A missing bike lane, a sourdoug
 
 ## What it does
 
-Who Said That? turns internet community culture into a daily social deduction game. Open the Interactive Post, meet our original detective cat, and read a comment on the Evidence Board. Pick one of four communities, take a clue if you need it, and lock in your theory. The reveal explains what gave the community away.
+Who Said That? turns internet community culture into a daily social deduction game rooted in Reddit community culture. Open the Interactive Post, meet our original detective cat, and read a comment on the Evidence Board. Pick one of four communities, take a clue if you need it, and lock in your theory. The reveal explains what gave the community away.
 
 **Community Detective** opens a five-case Daily at midnight UTC. Each installation plays the same Daily pack on a given date in this fictional mode. Finish to see your score, earn a streak, compare your results on the subreddit leaderboard, and copy a spoiler-free report for the post's comments. With at least five ranked finishers, **Community Intelligence** shows choice distributions and the cases that stumped the most detectives. You can learn the rules in a separate, unranked five-case Tutorial.
 
-**Multiplayer Party** lets two to six people join by room code and play five timed rounds together. After each round, the Evidence Board shows where the room voted and how the standings changed.
+**Multiplayer Party** is designed for two to six people in real time. Join by room code and play five timed rounds. After each round, the Evidence Board reveals the community guess distribution and updated standings. The live host lobby has been verified. A two-account Reddit match is pending.
 
-The game includes 100 originally written fictional cases inspired by community culture, with 70 for Daily, 25 for Party, and five for Tutorial. The app also implements an opt-in form for Reddit authors to offer or withdraw their comments. Moderators review permissions and choose a content pool. At preparation time, the approved Reddit-comment pool contains zero cases. The submission targets the fully playable fictional mode.
+The game includes 100 original fictional cases inspired by community culture, with 70 for Daily, 25 for Party, and five for Tutorial. The app also implements an opt-in form for Reddit authors to offer or withdraw their comments. Moderators review permissions and choose a content pool. At preparation time, the approved Reddit-comment pool contains zero cases. The submission targets the fully playable fictional mode.
 
 ## How we built it
 
-We built the feed preview and expanded game with Devvit Web and React. The Devvit server controls the case packs, allowed actions, deadlines, and scoring. Per-subreddit Redis stores progress and standings. The Scheduler supports the UTC rollover, and the Party client uses Realtime notifications with polling recovery. Browser and service verification so far has used a local Devvit mock. The [release checklist](RELEASE_CHECKLIST.md) tracks live Reddit verification.
+We built the feed preview and expanded game with Devvit Web and React. The Devvit server controls the case packs, allowed actions, deadlines, and scoring. Per-subreddit Redis stores progress and standings. The Scheduler supports the UTC rollover, and the Party client uses Realtime notifications with polling recovery. Version 0.0.1 is installed and playable on Reddit. The owner completed a live Daily and opened a Party lobby. The [release checklist](RELEASE_CHECKLIST.md) tracks independent access and two-player verification.
 
 ## Challenges we ran into
 
